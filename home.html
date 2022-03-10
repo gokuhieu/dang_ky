@@ -61,17 +61,13 @@
                 <div class="row1">
                     <h2>Product FORM </h2>
                     <table class="table" style="width:100%" >
-                      <% nameid= result.fields[0].name, nameproduct= result.fields[1].name,cateidname= result.fields[2].name,productprice= result.fields[3].name,prodecription= result.fields[4].name,image=result.fields[5].name%>
                       <thead class="thead-dark">
                     <tr>
-                    <th scope="col"><%= nameid%></th>
-                    <th scope="col"><%= nameproduct%></th> 
-                    <th scope="col"><%= cateidname%></th>
-                    <th scope="col"><%= productprice%></th>
-                    <th scope="col"><%= prodecription%></th>
-                    
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col">Roblox_Name</th>
+                    <th scope="col">Discord Name</th> 
+                    <th scope="col">Member</th>
+                    <th scope="col">Blooline</th>
+                    <th scope="col">Element</th>
                     </tr>
                     </thead>
                     <% for(var x=0;x < result.rowCount;x++){%>
