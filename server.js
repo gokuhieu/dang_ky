@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 var url = require('url');
 const path = require('path');
-var product= require('./product.js')
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
 const sessions = require('cookie-session');
@@ -64,7 +63,10 @@ app.get('/',(req,res)=>{
        
 })
 
-
+app.get('/luat',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'./luat.html'))
+       
+})
 
 app.get('/home',(req,res)=>{
     var query2 ="select * from public.User_info";
