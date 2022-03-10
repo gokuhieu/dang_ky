@@ -33,18 +33,23 @@ app.post('/dangky',(req, res) => {
     const member= req.body.member;
     const blooline= req.body.blooline;
     const element =req.body.element;
-    var query2 ="insert into public.User_info values('"+roblox_name+"'"+",'"+discord_name+"'"+",'"+member+"'"+",'"+blooline+"'"+",'"+element+"')";
-    myconect.query(query2,(err,result) =>{
-        if(err)
-        {
-            console.log(err)
-            return;
-        }      
-        else{
-            res.redirect("/")
-        }
-            
-    }) 
+    if(discord_name.includes("#")){
+        var query2 ="insert into public.User_info values('"+roblox_name+"'"+",'"+discord_name+"'"+",'"+member+"'"+",'"+blooline+"'"+",'"+element+"')";
+        myconect.query(query2,(err,result) =>{
+            if(err)
+            {
+                console.log(err)
+                return;
+            }      
+            else{
+                res.redirect("/")
+            }
+                
+        }) 
+    }else{
+        res.render(path.join(__dirname,"adduser.html"),{message:"ID discord sai"})
+    }
+   
 })
 
 app.get('/',(req,res)=>{
