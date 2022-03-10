@@ -79,15 +79,13 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
-<script>
-  if(message){
-    alert(message);
-  }
-  
-</script>
+
 
 <p class="text-center">Đăng ký giải 2v2 Discord</p>
 <h1><a href="/">về trang chính</a></h1>
+<% if(message){ %>
+  <p><%= message %></p>
+  <%} %>
 <p class="text-center">Link tham gia discord <a href="https://discord.gg/ygBdAqay"></a></p>
 <div class="container">
   <form action="https://dangkygiaidau.herokuapp.com/dangky/" method="post" enctype='multipart/form-data'>
