@@ -24,7 +24,7 @@ const myconect = new connection({
     ssl: {rejectUnauthorized: false},
     });
 app.get('/dangky',(req, res) => {
-    res.sendFile(path.resolve(__dirname,'./adduser.html'))
+    res.render(path.join(__dirname,"adduser.html"),{message:""})
 })
 app.post('/dangky',(req, res) => {
     
