@@ -33,7 +33,7 @@ app.post('/dangky',(req, res) => {
     const member= req.body.member;
     const blooline= req.body.blooline;
     const element =req.body.element;
-    if(discord_name.includes("#")){
+    if(discord_name.includes("#")||roblox_name||discord_name||blooline||element){
         var query2 ="insert into public.User_info values('"+roblox_name+"'"+",'"+discord_name+"'"+",'"+member+"'"+",'"+blooline+"'"+",'"+element+"')";
         myconect.query(query2,(err,result) =>{
             if(err)
