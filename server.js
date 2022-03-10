@@ -39,7 +39,7 @@ app.post('/dangky',(req, res) => {
             if(err)
             {
                 console.log(err)
-                return;
+                res.render(path.join(__dirname,"adduser.html"),{message:"Roblox Name đã bị trùng"})
             }      
             else{
                 res.redirect("/")
