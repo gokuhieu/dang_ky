@@ -47,7 +47,7 @@ app.post('/dangky',(req, res) => {
                 
         }) 
     }else{
-        res.render(path.join(__dirname,"adduser.html"),{message:"ID discord sai"})
+        res.render(path.join(__dirname,"adduser.html"),{message:"ID discord sai hoặc bạn chưa nhập đủ thông tin"})
     }
    
 })
