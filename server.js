@@ -75,6 +75,10 @@ app.get('/bangdau',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'./bangdau.html'))
        
 })
+app.get('/giaithuong',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'./giaithuong.html'))
+       
+})
 
 app.get('/home',(req,res)=>{
     var query2 ="select * from public.User_info";
