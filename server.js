@@ -11,7 +11,7 @@ var invoiceid=0;
 const fileUpload = require('express-fileupload')
 app.engine('html', require('ejs').renderFile);
 app.use(express.urlencoded({ extended: true })); 
-app.use('/public/images',express.static((__dirname+ '/public/images')))
+app.use('/public',express.static((__dirname+ '/public')))
 app.use(fileUpload({useTempFiles: true}))
 
 const connection = require('pg').Pool;
