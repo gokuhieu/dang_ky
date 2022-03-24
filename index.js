@@ -79,6 +79,7 @@ bot.on('messageCreate', (message) => {
 		var estDate = new Date(date.getTime() + offset*60*1000);
 		var a= date.getHours()-12+ ":" + date.getMinutes()
 		var hourss=date.getHours()+7;
+		console.log(hourss)
 		var hours= hourss>=12?hourss-12:hourss
 		for(let i=0;i<spawm.rows.length;i++){
 			
