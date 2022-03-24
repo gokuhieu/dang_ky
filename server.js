@@ -245,7 +245,7 @@ bot.on('messageCreate', (message) => {
     
 });
 
-bot.login(process.env.DISCORD_TOKEN));
+bot.login(process.env.DISCORD_TOKEN);
 
 app.listen(port, () => {
     console.log(`Application started and Listening on port ${port}`);
