@@ -78,8 +78,8 @@ bot.on('messageCreate', (message) => {
 		var offset = -300; //Timezone offset for EST in minutes.
 		var estDate = new Date(date.getTime() + offset*60*1000);
 		var a= date.getHours()-12+ ":" + date.getMinutes()
-		var hours= date.getHours()>=12?date.getHours():date.getHours()
-		
+		var hourss=date.getHours()+7;
+		var hours= hourss>=12?hourss-12:hourss
 		for(let i=0;i<spawm.rows.length;i++){
 			
 			if(spawm.rows[i].time.hour===hours&&spawm.rows[i].time.minute<=date.getMinutes()&&date.getMinutes()<=spawm.rows[i].time.minute+25){
