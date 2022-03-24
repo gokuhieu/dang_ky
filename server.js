@@ -172,7 +172,7 @@ bot.on('messageCreate', (message) => {
 		var estDate = new Date(date.getTime() + offset*60*1000);
 		var a= date.getHours()-12+ ":" + date.getMinutes()
 		var hours= date.getHours()>=12?date.getHours()-12:date.getHours()
-		
+		console.log(hours)
 		for(let i=0;i<spawm.rows.length;i++){
 			
 			if(spawm.rows[i].time.hour===hours&&spawm.rows[i].time.minute<=date.getMinutes()&&date.getMinutes()<=spawm.rows[i].time.minute+25){
