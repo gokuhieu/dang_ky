@@ -117,4 +117,4 @@ bot.on('messageCreate', (message) => {
     
 });
 
-bot.login(process.env.DJS_TOKEN);
+bot.login("OTMwMTE3MTMwNTM4NTg2MTMz.YdxNFA.IiIE-KdIARIu0bubC4qD9i30lPs");
