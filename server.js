@@ -141,6 +141,12 @@ lmited bloodline - đóng
 max ryo - 40K
 1m ryo - 1k
 săn tailed beast - 10k gen 2, 20k gen 1 `;
+const help=`;[command] 
+----list command---
+random private code cho 1 làng ;[village], lấy danh sách toàn bộ ps code làng đó;[village] list
+thời gian của các item drop hiện tại ;spawm now
+xem danh sách đã đăng kí ao làng ;aolang
+`
 bot.on('messageCreate', (message) => {
 	if (message.author.bot) 
 		return;
@@ -149,6 +155,8 @@ bot.on('messageCreate', (message) => {
         message.channel.send('bunpro đẹp trai nhất nhóm!');
 	}else if(message.content.toLowerCase() ===';banggia')
 	message.channel.send(banggia);
+    else if(message.content.toLowerCase() ===';help')
+	message.channel.send(help);
 	else if(message.content.toLowerCase() ===";aolang"){
 		var query2 ="select * from public.User_info";
 		myconect.query(query2,(err,result) =>{
@@ -190,7 +198,35 @@ bot.on('messageCreate', (message) => {
 		}
 		ss===""?ss="không có item drop":ss
 		message.channel.send(ss)
+	}else if(message.content.toLowerCase().startsWith(`;spawm`)&&message.content.toLowerCase().includes("now"))	{
+		const date = new Date();
+		let ss=""
+		var offset = -300; //Timezone offset for EST in minutes.
+		var estDate = new Date(date.getTime() + offset*60*1000);
+
+		var hours= estDate.getHours()>=12?estDate.getHours()-12:estDate.getHours()
+		for(let i=0;i<spawm.rows.length;i++){
+			
+			if(spawm.rows[i].time.hour===hours&&spawm.rows[i].time.minute<=estDate.getMinutes()&&estDate.getMinutes()<=spawm.rows[i].time.minute+25){
+				var des=spawm.rows[i].time.minute+25
+				let hournow= formathour(spawm.rows[i].time.hour,des)
+				if(des>=60){
+					des=des-60;
+				}else{
+					
+				}
+				ss=ss+`item :${spawm.rows[i].name},Location = ${spawm.rows[i].location}, Time spawm = ${spawm.rows[i].time.hour+":"+spawm.rows[i].time.minute}, Time to despawm = ${hournow+":"+des}, tỷ lệ: ${spawm.rows[i].tyle} \n`;
+			}else{
+				
+			}
+			
+		}
+		ss===""?ss="không có item drop":ss
+		message.channel.send(ss)
 	}
+	
+
+
 	
 	for(let i=0;i<village.rows.length;i++){
 		if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
