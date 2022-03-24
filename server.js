@@ -143,7 +143,7 @@ max ryo - 40K
 săn tailed beast - 10k gen 2, 20k gen 1 `;
 const help=`;[command] 
 ----list command---
-random private code cho 1 làng ;[village], lấy danh sách toàn bộ ps code làng đó;[village] list
+random private code cho 1 làng: ;[village], lấy danh sách toàn bộ ps code làng đó: ;[village] list
 thời gian của các item drop hiện tại ;spawm now
 xem danh sách đã đăng kí ao làng ;aolang
 `
