@@ -170,12 +170,12 @@ bot.on('messageCreate', (message) => {
 		let ss=""
 		var offset = -300; //Timezone offset for EST in minutes.
 		var estDate = new Date(date.getTime() + offset*60*1000);
-		var a= date.getHours()-12+ ":" + date.getMinutes()
-		var hours= date.getHours()>=12?date.getHours()-12:date.getHours()
+
+		var hours= estDate.getHours()>=12?estDate.getHours()-12:estDate.getHours()
 		console.log(hours)
 		for(let i=0;i<spawm.rows.length;i++){
 			
-			if(spawm.rows[i].time.hour===hours&&spawm.rows[i].time.minute<=date.getMinutes()&&date.getMinutes()<=spawm.rows[i].time.minute+25){
+			if(spawm.rows[i].time.hour===hours&&spawm.rows[i].time.minute<=estDate.getMinutes()&&estDate.getMinutes()<=spawm.rows[i].time.minute+25){
 				var des=spawm.rows[i].time.minute+25
 				let hournow= formathour(spawm.rows[i].time.hour,des)
 				if(des>=60){
