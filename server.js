@@ -190,7 +190,7 @@ bot.on('messageCreate', (message) => {
 				}else{
 					
 				}
-				ss=ss+`item :${spawm.rows[i].name},Location = ${spawm.rows[i].location}, Time spawm = ${spawm.rows[i].time.hour+":"+spawm.rows[i].time.minute}, Time to despawm = ${hournow+":"+des==0?00:des}, tỷ lệ: ${spawm.rows[i].tyle} \n`;
+				ss=ss+`item :${spawm.rows[i].name},Location = ${spawm.rows[i].location}, Time spawm = ${spawm.rows[i].time.hour+":"+spawm.rows[i].time.minute}, Time to despawm = ${hournow+":"+des==0?"00":des}, tỷ lệ: ${spawm.rows[i].tyle} \n`;
 			}else{
 				
 			}
