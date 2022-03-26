@@ -230,21 +230,6 @@ bot.on('messageCreate', (message) => {
 		ss===""?ss="không có item drop":ss
 		
 	}else if(message.channelId=="957142185168470017"){
-		// (async () => {
-		// 	try {
-		// 	  const res = await fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`,{mode: 'cors'});
-		  
-		// 	  if (res.status >= 400) {
-		// 		throw new Error("Bad response from server");
-		// 	  }
-		  
-		// 	  const messagesim = await res.json();
-		  
-		// 	  chatbox.send(`Bun đẹp trai : ${messagesim.success}`)
-		// 	} catch (err) {
-		// 	  console.error(err);
-		// 	}
-		//   })();
 			fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`,{mode: 'cors'})
 			.then(result=> result.json())
 			.then(data=>{
@@ -253,8 +238,6 @@ bot.on('messageCreate', (message) => {
 			
 			// const response = await simsimi(message.content.toLowerCase())
 			// chatbox.send(`Bun đẹp trai : ${response}`)
-			
-		  
 		  ;
 	}
 	
