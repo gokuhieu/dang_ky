@@ -17,7 +17,7 @@ const { Client, Intents } = require('discord.js');
 const { token } = require('./Config.json');
 const village=require('./village.json')
 const spawm = require('./spawm.json')
-const fetch = require("node-fetch")
+global.fetch = require("node-fetch")
 const connection = require('pg').Pool;
 const simsimi = require('simsimi')({
 	key: 'Hw5nUcqXcCl4t-cD24OVih9Fq.Pt7KsUPD1e4hpa',
