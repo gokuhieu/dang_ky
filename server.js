@@ -151,7 +151,7 @@ thời gian của các item drop hiện tại ;spawm now
 xem danh sách đã đăng kí ao làng ;aolang
 `
 bot.on('messageCreate', (message) => {
-	var chatbox=message.guild.channels.cache.get("957142185168470017")
+	var chatbox=message.guild.channels.cache.get("957142185168470017").
 	if (message.author.bot) 
 		return;
 
@@ -228,15 +228,15 @@ bot.on('messageCreate', (message) => {
 		}
 		ss===""?ss="không có item drop":ss
 		
-	// }else if(chatbox){
-	// 	  (async () => {
-	// 		var chatbox1=message.guild.channels.cache.find(i=>i=="957142185168470017")
-	// 		const response = await simsimi(message.content.toLowerCase())
-	// 		chatbox.send(`simsimi say: ${response}`)
+	}else if(message.channelId=="957142185168470017"){
+		  (async () => {
+			var chatbox1=message.guild.channels.cache.find(i=>i=="957142185168470017")
+			const response = await simsimi(message.content.toLowerCase())
+			chatbox.send(`simsimi say: ${response}`)
 			
 		  
-	// 	  })();
-	// }
+		  })();
+	}
 	
 
 
