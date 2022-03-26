@@ -229,7 +229,7 @@ bot.on('messageCreate', (message) => {
 		ss===""?ss="không có item drop":ss
 		
 	}else if(message.channelId=="957142185168470017"){
-			fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`)
+			fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`,{mode: 'cors'})
 			.then(result=> result.json())
 			.then(data=>{
 				chatbox.send(`Bun đẹp trai : ${data.success}`)
