@@ -18,8 +18,7 @@ const { token } = require('./Config.json');
 const village=require('./village.json')
 const spawm = require('./spawm.json')
 const connection = require('pg').Pool;
-import fetch from 'node-fetch'
-globalThis.fetch = fetch
+import fetch from "node-fetch"
 const simsimi = require('simsimi')({
 	key: 'Hw5nUcqXcCl4t-cD24OVih9Fq.Pt7KsUPD1e4hpa',
   });
