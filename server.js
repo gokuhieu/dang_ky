@@ -232,8 +232,7 @@ bot.on('messageCreate', (message) => {
 		  (async () => {
 			var chatbox1=message.guild.channels.cache.find(i=>i=="957142185168470017")
 			const response = await simsimi(message.content.toLowerCase())
-			message.channel.send(`simsimi say: ${response}`);
-			
+			chatbox.send(`simsimi say: ${response}`)
 			
 		  
 		  })();
