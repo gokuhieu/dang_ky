@@ -167,8 +167,8 @@ bot.on('messageCreate', (message) => {
 			else{
 				var s=``
 				for(var i= 0;i<result.rowCount;i++){
-					var user= Client.users.cache.find(user => user.username == result.rows[i].DisName)
-					s=s+result.rows[i].Roblox_ID + " - "+"<@" + user + ">"+"\n";
+					var user= Client.users.find(user => user.username == result.rows[i].DisName)
+					s=s+result.rows[i].Roblox_ID + " - "+user.toString()+"\n";
 					
 				}
 				message.channel.send(s);
