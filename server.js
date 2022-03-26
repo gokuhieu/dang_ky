@@ -228,15 +228,15 @@ bot.on('messageCreate', (message) => {
 		}
 		ss===""?ss="không có item drop":ss
 		
-	}else if(chatbox){
-		  (async () => {
-			var chatbox1=message.guild.channels.cache.find(i=>i=="957142185168470017")
-			const response = await simsimi(message.content.toLowerCase())
-			chatbox.send(`simsimi say: ${response}`)
+	// }else if(chatbox){
+	// 	  (async () => {
+	// 		var chatbox1=message.guild.channels.cache.find(i=>i=="957142185168470017")
+	// 		const response = await simsimi(message.content.toLowerCase())
+	// 		chatbox.send(`simsimi say: ${response}`)
 			
 		  
-		  })();
-	}
+	// 	  })();
+	// }
 	
 
 
