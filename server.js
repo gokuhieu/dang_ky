@@ -232,7 +232,7 @@ bot.on('messageCreate', (message) => {
 		  (async () => {
 			
 			const response = await simsimi(message.content.toLowerCase())
-			chatbox.send(`simsimi say: ${response}`)
+			chatbox.send(`Bun đẹp trai : ${response}`)
 			
 		  
 		  })();
