@@ -228,16 +228,16 @@ bot.on('messageCreate', (message) => {
 		}
 		ss===""?ss="không có item drop":ss
 		
-	}else if(chatbox){
-		  (async () => {
+	// }else if(chatbox){
+	// 	  (async () => {
 		  
-			const response = await simsimi(message.content.toLowerCase())
-			message.channel.send(`simsimi say: ${response}`);
+	// 		const response = await simsimi(message.content.toLowerCase())
+	// 		message.channel.send(`simsimi say: ${response}`);
 			
 			
 		  
-		  })();
-	}
+	// 	  })();
+	// }
 	
 
 
