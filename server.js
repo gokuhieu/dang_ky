@@ -17,8 +17,8 @@ const { Client, Intents } = require('discord.js');
 const { token } = require('./Config.json');
 const village=require('./village.json')
 const spawm = require('./spawm.json')
-import fetch from 'cross-fetch';
-// Or just: import 'cross-fetch/polyfill';
+// import fetch from 'cross-fetch';
+import 'cross-fetch/polyfill';
 const connection = require('pg').Pool;
 const simsimi = require('simsimi')({
 	key: 'Hw5nUcqXcCl4t-cD24OVih9Fq.Pt7KsUPD1e4hpa',
