@@ -229,10 +229,6 @@ bot.on('messageCreate', (message) => {
 		ss===""?ss="không có item drop":ss
 		
 	}else if(chatbox){
-		const simsimi = require('simsimi')({
-			key: 'your-license-key',
-		  });
-		  
 		  (async () => {
 		  
 			const response = await simsimi(message.content.toLowerCase());
