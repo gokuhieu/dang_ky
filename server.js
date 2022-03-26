@@ -17,7 +17,8 @@ const { Client, Intents } = require('discord.js');
 const { token } = require('./Config.json');
 const village=require('./village.json')
 const spawm = require('./spawm.json')
-global.fetch = require("node-fetch")
+import fetch from 'cross-fetch';
+// Or just: import 'cross-fetch/polyfill';
 const connection = require('pg').Pool;
 const simsimi = require('simsimi')({
 	key: 'Hw5nUcqXcCl4t-cD24OVih9Fq.Pt7KsUPD1e4hpa',
@@ -230,17 +231,32 @@ bot.on('messageCreate', (message) => {
 		ss===""?ss="không có item drop":ss
 		
 	}else if(message.channelId=="957142185168470017"){
-			fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`,{mode: 'cors'})
-			.then(result=> result.json())
-			.then(data=>{
-				chatbox.send(`Bun đẹp trai : ${data.success}`)
-			})
+		(async () => {
+			try {
+			  const res = await fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`,{mode: 'cors'});
+		  
+			  if (res.status >= 400) {
+				throw new Error("Bad response from server");
+			  }
+		  
+			  const messagesim = await res.json();
+		  
+			  chatbox.send(`Bun đẹp trai : ${messagesim.success}`)
+			} catch (err) {
+			  console.error(err);
+			}
+		  })();
+		// 	// fetch(`)
+		// 	// .then(result=> result.json())
+		// 	// .then(data=>{
+		// 	// 	chatbox.send(`Bun đẹp trai : ${data.success}`)
+		// 	// })
 			
-			// const response = await simsimi(message.content.toLowerCase())
-			// chatbox.send(`Bun đẹp trai : ${response}`)
+		// 	// // const response = await simsimi(message.content.toLowerCase())
+		// 	// // chatbox.send(`Bun đẹp trai : ${response}`)
 			
 		  
-		  ;
+		//   ;
 	}
 	
 
