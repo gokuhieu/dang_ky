@@ -19,7 +19,7 @@ const village=require('./village.json')
 const spawm = require('./spawm.json')
 const connection = require('pg').Pool;
 const simsimi = require('simsimi')({
-	key: 'a8oNJT8TY3q4MKZQygCXWOXTgoAN_l8zrYHzgtWo',
+	key: 'Hw5nUcqXcCl4t-cD24OVih9Fq.Pt7KsUPD1e4hpa',
   });
 const myconect = new connection({
     user: 'pyosvocvftheey',
