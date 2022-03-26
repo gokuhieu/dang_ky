@@ -18,6 +18,9 @@ const { token } = require('./Config.json');
 const village=require('./village.json')
 const spawm = require('./spawm.json')
 const connection = require('pg').Pool;
+const simsimi = require('simsimi')({
+	key: 'a8oNJT8TY3q4MKZQygCXWOXTgoAN_l8zrYHzgtWo',
+  });
 const myconect = new connection({
     user: 'pyosvocvftheey',
     host: 'ec2-54-235-98-1.compute-1.amazonaws.com',
@@ -148,6 +151,7 @@ thời gian của các item drop hiện tại ;spawm now
 xem danh sách đã đăng kí ao làng ;aolang
 `
 bot.on('messageCreate', (message) => {
+	var chatbox=message.guild.channels.cache.find(i=>i.id=="957142185168470017")
 	if (message.author.bot) 
 		return;
 
@@ -223,7 +227,18 @@ bot.on('messageCreate', (message) => {
 			
 		}
 		ss===""?ss="không có item drop":ss
-		message.channel.send(ss)
+		
+	}else if(chatbox){
+		const simsimi = require('simsimi')({
+			key: 'your-license-key',
+		  });
+		  
+		  (async () => {
+		  
+			const response = await simsimi(message.content.toLowerCase());
+			message.channel.send('simsimi say: ', response); // What's up ?
+		  
+		  })();
 	}
 	
 
