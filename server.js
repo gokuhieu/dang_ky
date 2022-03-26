@@ -231,7 +231,9 @@ bot.on('messageCreate', (message) => {
 	}else if(chatbox){
 		  (async () => {
 		  
-			const response = await simsimi(message.content.toLowerCase()).then(message.channel.send('simsimi say: ', response));
+			const response = await simsimi(message.content.toLowerCase())
+			(message.channel.send(`'simsimi say: ', ${response}`));
+			
 			
 		  
 		  })();
