@@ -2,9 +2,10 @@
   "name": "GCS0805B",
   "version": "1.0.0",
   "main": "product.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.mjs"
   },
   "repository": {
     "type": "git",
