@@ -231,7 +231,7 @@ bot.on('messageCreate', (message) => {
 		
 	}else if(message.channelId=="957142185168470017"){
 		  (async () => {
-			const response = await fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false `)
+			const response = await fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`)
 			.then(result=> result.json())
 			.then(data=>{
 				chatbox.send(`Bun đẹp trai : ${data.success}`)
