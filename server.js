@@ -155,7 +155,6 @@ bot.on('messageCreate', (message) => {
 	var chatbox=message.guild.channels.cache.get("957142185168470017")
 	if (message.author.bot) 
 		return;
-
     if(message.content.toLowerCase().includes('bun') || message.content.toLowerCase().includes('đẹp trai'||message.content.toLowerCase().includes("dep trai")) ){
         message.channel.send('bunpro đẹp trai nhất nhóm!');
 	}else if(message.content.toLowerCase() ===';banggia')
@@ -172,19 +171,16 @@ bot.on('messageCreate', (message) => {
 			else{
 				var s=``
 				for(var i= 0;i<result.rowCount;i++){
-					s=s+result.rows[i].Roblox_ID + " - "+result.rows[i].DisName+"\n";
-					
+					s=s+result.rows[i].Roblox_ID + " - "+result.rows[i].DisName+"\n";	
 				}
 				message.channel.send(s);
-			}
-				
+			}	
 		}) 
 	}else if(message.content.toLowerCase().startsWith(`;spawm`)&&message.content.toLowerCase().includes("now"))	{
 		const date = new Date();
 		let ss=""
 		var offset = -300; //Timezone offset for EST in minutes.
 		var estDate = new Date(date.getTime() + offset*60*1000);
-
 		var hours= estDate.getHours()>=12?estDate.getHours()-12:estDate.getHours()
 		for(let i=0;i<spawm.rows.length;i++){
 			
@@ -193,14 +189,11 @@ bot.on('messageCreate', (message) => {
 				let hournow= formathour(spawm.rows[i].time.hour,des)
 				if(des>=60){
 					des=des-60;
-				}else{
-					
+				}else{			
 				}
 				ss=ss+`item :${spawm.rows[i].name},Location = ${spawm.rows[i].location}, Time spawm = ${spawm.rows[i].time.hour+":"+spawm.rows[i].time.minute}, Time to despawm = ${des==0?hournow+":00"+"00":hournow+":"+des}, tỷ lệ: ${spawm.rows[i].tyle} \n`;
 			}else{
-				
 			}
-			
 		}
 		ss===""?ss="không có item drop":ss
 		message.channel.send(ss)
@@ -222,23 +215,17 @@ bot.on('messageCreate', (message) => {
 					
 				}
 				ss=ss+`item :${spawm.rows[i].name},Location = ${spawm.rows[i].location}, Time spawm = ${spawm.rows[i].time.hour+":"+spawm.rows[i].time.minute}, Time to despawm = ${hournow+":"+des}, tỷ lệ: ${spawm.rows[i].tyle} \n`;
-			}else{
-				
-			}
-			
+			}else{}
 		}
 		ss===""?ss="không có item drop":ss
-		
 	}else if(message.channelId=="957142185168470017"){
 			fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`,{mode: 'cors'})
 			.then(result=> result.json())
 			.then(data=>{
 				chatbox.send(`Bun đẹp trai : ${data.success}`)
-			})
-			
+			})	
 			// const response = await simsimi(message.content.toLowerCase())
 			// chatbox.send(`Bun đẹp trai : ${response}`)
-		  ;
 	}else if(message.content.toLowerCase()===(`;dangki`)){
 		var query2 ="insert into public.User (ID,Name,Money) values('"+message.author.id+"'"+",'"+message.author.username+"'"+","+0+")";
 		myconect.query(query2,(err,result) =>{
@@ -248,10 +235,8 @@ bot.on('messageCreate', (message) => {
 				message.channel.send("error pls contact to admin");
 			}      
 			else{
-
 				message.channel.send("đăng kí thành công");
 			}
-				
 		}) 
 	}else if(message.content.toLowerCase()===(`;diemdanh`)){
 		var check=false;
@@ -284,15 +269,12 @@ bot.on('messageCreate', (message) => {
 									else{
 										message.channel.send("Điểm danh thành công và nhận đc 100 coin");
 									}
-										
-								}) 
-								
+								}) 	
 							}
 						}) 
 						check=true;
 						break;
-					}
-					
+						}
 					}
 					if(!check){
 						message.channel.send("hãy đăng kí account")
@@ -313,9 +295,7 @@ bot.on('messageCreate', (message) => {
 							message.channel.send(`Người chơi: ${result.rows[i].name}, coin: ${result.rows[i].money}`);
 						}
 					}
-					
-				}
-					
+				}	
 			}) 
 		}else if(message.content.toLowerCase()===(`;doiitem`)){
 			var query2 ="select * from public.voucher";
@@ -331,23 +311,14 @@ bot.on('messageCreate', (message) => {
 						s=s+`id: ${result.rows[i].voucherid}, ${result.rows[i].name}`
 					}
 					message.channel.send(s);
-				}
-					
+				}	
 			}) 
 		}		
-		
-	
-
-	
-
-
-	
 	for(let i=0;i<village.rows.length;i++){
 		if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
 			for(let j=0;j<village.rows[i].code.length;j++){
 				s=s+village.rows[i].code[j]+"\n"
-			}
-				
+			}	
 			message.channel.send(s);
 		}
 		else if(message.content.toLowerCase() ===`;${village.rows[i].name}`){
@@ -355,12 +326,8 @@ bot.on('messageCreate', (message) => {
 		message.channel.send(item);
 		}
 	}
-
-    
 });
-
 bot.login(process.env.DISCORD_TOKEN);
-
 app.listen(port, () => {
     console.log(`Application started and Listening on port ${port}`);
 });
