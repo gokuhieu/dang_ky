@@ -266,18 +266,18 @@ bot.on('messageCreate', (message) => {
 					if(result.rows[i].userid==message.author.id){
 						var date=new Date();
 						var query1 ="insert into public.diemdanhlog values('"+message.author.id+"'"+","+date +")";
-						myconect.query(query1,(err,result1) =>{
-							if(err)
+						myconect.query(query1,(err1,result1) =>{
+							if(err1)
 							{
-								console.log(err)
+								console.log(err1)
 								message.channel.send("error pls contact to admin");
 							}      
 							else{
 								var query3 ="update public.diemdanhlog set money= money+"+ 100 +"where id='"+message.author.id+"'";
-								myconect.query(query3,(err,result3) =>{
-									if(err)
+								myconect.query(query3,(err2,result3) =>{
+									if(err2)
 									{
-										console.log(err)
+										console.log(err2)
 										message.channel.send("error pls contact to admin");
 									}      
 									else{
