@@ -270,7 +270,7 @@ bot.on('messageCreate', (message) => {
 							if(err1)
 							{
 								console.log(err1)
-								message.channel.send("error pls contact to admin");
+								message.channel.send("Bạn đã điểm danh hôm nay r");
 							}      
 							else{
 								var query3 ="update public.user set money= money+"+ 100 +"where id='"+message.author.id+"'";
@@ -281,7 +281,7 @@ bot.on('messageCreate', (message) => {
 										message.channel.send("error pls contact to admin");
 									}      
 									else{
-										message.channel.send("Điểm danh thành công");
+										message.channel.send("Điểm danh thành công và nhận đc 100 coin");
 									}
 										
 								}) 
