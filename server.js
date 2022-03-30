@@ -239,6 +239,19 @@ bot.on('messageCreate', (message) => {
 			// const response = await simsimi(message.content.toLowerCase())
 			// chatbox.send(`Bun đẹp trai : ${response}`)
 		  ;
+	}else if(message.content.toLowerCase()===(`;dangki`)){
+		var query2 ="insert into public.User (ID,Name,Money) values('"+message.author.id+"'"+",'"+message.author.username+"'"+","+0+")";
+		myconect.query(query2,(err,result) =>{
+			if(err)
+			{
+				message.channel.send("error pls contact to admin");
+			}      
+			else{
+
+				message.channel.send("đăng kí thành công");
+			}
+				
+		}) 
 	}
 	
 
