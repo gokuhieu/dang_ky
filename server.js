@@ -254,6 +254,7 @@ bot.on('messageCreate', (message) => {
 				
 		}) 
 	}else if(message.content.toLowerCase()===(`;diemdanh`)){
+		var check=false;
 		var query2 ="select * from public.user";
 		myconect.query(query2,(err,result) =>{
 			if(err)
@@ -262,7 +263,7 @@ bot.on('messageCreate', (message) => {
 				message.channel.send("error pls contact to admin");
 			}      
 			else{
-				for(let i=0;i<result.rowCount;i++)
+				for(let i=0;i<result.rowCount;i++){
 					if(result.rows[i].id==message.author.id){
 						var date=new Date();
 						var query1 ="insert into public.diemdanhlog values('"+message.author.id+"'"+",'"+date +"')";
@@ -289,7 +290,13 @@ bot.on('messageCreate', (message) => {
 							}
 								
 						}) 
+						check=true;
 						break;
+					}
+					
+					}
+					if(!check){
+						message.channel.send("hãy đăng kí account")
 					}
 				}
 			})
