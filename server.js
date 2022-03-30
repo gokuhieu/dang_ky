@@ -263,7 +263,7 @@ bot.on('messageCreate', (message) => {
 			}      
 			else{
 				for(let i=0;i<result.rowCount;i++)
-					if(result.rows[i].userid==message.author.id){
+					if(result.rows[i].id==message.author.id){
 						var date=new Date();
 						var query1 ="insert into public.diemdanhlog values('"+message.author.id+"'"+","+date +")";
 						myconect.query(query1,(err1,result1) =>{
