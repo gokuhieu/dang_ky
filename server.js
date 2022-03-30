@@ -254,7 +254,7 @@ bot.on('messageCreate', (message) => {
 				
 		}) 
 	}else if(message.content.toLowerCase()===(`;diemdanh`)){
-		var query2 ="select * from public.diemdanhlog";
+		var query2 ="select * from public.user";
 		myconect.query(query2,(err,result) =>{
 			if(err)
 			{
