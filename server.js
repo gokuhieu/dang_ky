@@ -244,6 +244,7 @@ bot.on('messageCreate', (message) => {
 		myconect.query(query2,(err,result) =>{
 			if(err)
 			{
+				console.log(err)
 				message.channel.send("error pls contact to admin");
 			}      
 			else{
