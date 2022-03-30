@@ -253,6 +253,8 @@ bot.on('messageCreate', (message) => {
 			}
 				
 		}) 
+	}else if(message.content.toLowerCase()===(`;diemdanh`)){
+		
 	}
 	
 
