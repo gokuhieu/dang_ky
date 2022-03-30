@@ -288,7 +288,6 @@ bot.on('messageCreate', (message) => {
 								}) 
 								
 							}
-								
 						}) 
 						check=true;
 						break;
@@ -315,6 +314,23 @@ bot.on('messageCreate', (message) => {
 						}
 					}
 					
+				}
+					
+			}) 
+		}else if(message.content.toLowerCase()===(`;doiitem`)){
+			var query2 ="select * from public.voucher";
+			let s=""
+			myconect.query(query2,(err,result) =>{
+				if(err)
+				{
+					console.log(err)
+					message.channel.send("error pls contact to admin");
+				}      
+				else{
+					for(let i=0;i<result.rowCount;i++){
+						s=s+`id: ${result.rows[i].voucherid}, ${result.rows[i].name}`
+					}
+					message.channel.send(s);
 				}
 					
 			}) 
