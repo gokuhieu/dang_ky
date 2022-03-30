@@ -273,7 +273,7 @@ bot.on('messageCreate', (message) => {
 								message.channel.send("error pls contact to admin");
 							}      
 							else{
-								var query3 ="update public.diemdanhlog set money= money+"+ 100 +"where id='"+message.author.id+"'";
+								var query3 ="update public.user set money= money+"+ 100 +"where id='"+message.author.id+"'";
 								myconect.query(query3,(err2,result3) =>{
 									if(err2)
 									{
