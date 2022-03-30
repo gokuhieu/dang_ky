@@ -254,8 +254,49 @@ bot.on('messageCreate', (message) => {
 				
 		}) 
 	}else if(message.content.toLowerCase()===(`;diemdanh`)){
+		var query2 ="select * from public.diemdanhlog";
+		myconect.query(query2,(err,result) =>{
+			if(err)
+			{
+				console.log(err)
+				message.channel.send("error pls contact to admin");
+			}      
+			else{
+				for(let i=0;i<result.rowCount;i++)
+					if(result.rows[i].userid==message.author.id){
+						var date=new Date();
+						var query1 ="insert into public.diemdanhlog values('"+message.author.id+"'"+","+date +")";
+						myconect.query(query1,(err,result1) =>{
+							if(err)
+							{
+								console.log(err)
+								message.channel.send("error pls contact to admin");
+							}      
+							else{
+								var query3 ="update public.diemdanhlog set money= money+"+ 100 +"where id='"+message.author.id+"'";
+								myconect.query(query3,(err,result3) =>{
+									if(err)
+									{
+										console.log(err)
+										message.channel.send("error pls contact to admin");
+									}      
+									else{
+										message.channel.send("Điểm danh thành công");
+									}
+										
+								}) 
+								
+							}
+								
+						}) 
+						break;
+					}
+				}
+			})
+		}		
 		
-	}
+	
+
 	
 
 
