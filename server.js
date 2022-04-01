@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 var url = require('url');
+const xucxac= require('./public/load.gif')
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
@@ -256,7 +257,7 @@ bot.on('messageCreate', (message) => {
 							if(err1)
 							{
 								console.log(err1)
-								message.channel.send("Bạn đã điểm danh hôm nay r ⚅");
+								message.channel.send(`Bạn đã điểm danh hôm nay r ${xucxac}`);
 							}      
 							else{
 								var query3 ="update public.user set money= money+"+ 100 +"where id='"+message.author.id+"'";
