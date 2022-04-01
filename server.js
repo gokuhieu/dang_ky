@@ -267,7 +267,7 @@ bot.on('messageCreate', (message) => {
 										message.channel.send("error pls contact to admin");
 									}      
 									else{
-										message.channel.send("Điểm danh thành công và nhận đc 100 coin");
+										message.channel.send("Điểm danh thành công và nhận đc 100 coin 🪙");
 									}
 								}) 	
 							}
@@ -314,7 +314,7 @@ bot.on('messageCreate', (message) => {
 				}	
 			}) 
 		}		
-	for(let i=0;i<village.rows.length;i++){
+		for(let i=0;i<village.rows.length;i++){
 		if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
 			for(let j=0;j<village.rows[i].code.length;j++){
 				s=s+village.rows[i].code[j]+"\n"
