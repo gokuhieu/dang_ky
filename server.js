@@ -347,6 +347,7 @@ bot.on('messageCreate', (message) => {
 											setTimeout(() => msg.delete(), 2000)
 										  }).catch()
 									}
+										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name)
 										  message.channel.send("bạn đã thắng 200")
 									break;
 								}else{
