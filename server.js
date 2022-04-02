@@ -331,7 +331,10 @@ bot.on('messageCreate', (message) => {
 						for(let i=0;i<result.rowCount;i++){
 							if(message.author.id==result.rows[i].id){
 								if(result.rows[i].money>=sotien){
-										message.channel.send("đã đăng kí ").then(msg=>msg.delete({timeout:"3200"}))
+										message.channel.send("đã đăng kí ").then(msg => {
+											message.delete()
+											setTimeout(() => msg.delete(), 5000)
+										  })
 								}else{
 									messages="bạn không đủ tiền"
 								}
