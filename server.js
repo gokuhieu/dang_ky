@@ -315,6 +315,9 @@ bot.on('messageCreate', (message) => {
 					message.channel.send(s);
 				}	
 			}) 
+		}
+		else if(message.content.toLowerCase().startsWith(`;taixiu luat`)){
+			message.channel.send(`Với tài xỉu, bạn sử dụng 3 viên xúc xắc. Mỗi viên xúc xắc có 6 mặt và người chơi sẽ đặt cược kết quả sau khi nhà cái lắc xúc xắc. Nếu kết quả trên tổng 3 mặt của xúc xắc là 4 đến 10 thì đó gọi là Xỉu, còn nếu là 11 đến 17 thì đó là Tài`)
 		}else if(message.content.toLowerCase().startsWith(`;tai`)||message.content.toLowerCase().startsWith(`;xiu`)){
 			const word = message.content.split(' ')
 			var sotien=parseInt(word[1])
@@ -430,8 +433,6 @@ bot.on('messageCreate', (message) => {
 			}else{
 				message.channel.send("hãy nhập số tiền")
 			}
-		}else if(message.content.toLowerCase().startsWith(`;taixiu luat`)){
-			message.channel.send(`Với tài xỉu, bạn sử dụng 3 viên xúc xắc. Mỗi viên xúc xắc có 6 mặt và người chơi sẽ đặt cược kết quả sau khi nhà cái lắc xúc xắc. Nếu kết quả trên tổng 3 mặt của xúc xắc là 4 đến 10 thì đó gọi là Xỉu, còn nếu là 11 đến 17 thì đó là Tài`)
 		}
 		for(let i=0;i<village.rows.length;i++){
 		if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
