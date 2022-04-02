@@ -294,7 +294,7 @@ bot.on('messageCreate', (message) => {
 				else{
 					for(let i=0;i<result.rowCount;i++){
 						if(result.rows[i].id==message.author.id){
-							message.channel.send(`Người chơi: ${result.rows[i].name}, coin: ${result.rows[i].money}`);
+							message.channel.send(`Người chơi: ${result.rows[i].name}, coin: ${result.rows[i].money} 🪙`);
 						}
 					}
 				}	
