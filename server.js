@@ -352,7 +352,10 @@ bot.on('messageCreate', (message) => {
 												message.channel.send("bạn đã thắng 200")
 											  }
 										  }else{
-											message.channel.send("bạn đã thua 100")
+											if(message.content.toLowerCase().startsWith(`;xiu`)){
+												message.channel.send("bạn đã thua 100")
+											  }
+											
 										  }
 										  
 									break;
