@@ -349,15 +349,61 @@ bot.on('messageCreate', (message) => {
 										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name)
 										  if(randomitem[0].value+randomitem[1].value+randomitem[2].value>=11){
 											  if(message.content.toLowerCase().startsWith(`;tai`)){
-												message.channel.send("bạn đã thắng 200")
+												
+												var query3 ="update public.user set money= money+"+ sotien*2 +"where id='"+message.author.id+"'";
+												myconect.query(query3,(err2,result3) =>{
+													if(err2)
+													{
+														console.log(err2)
+														message.channel.send("error pls contact to admin");
+													}      
+													else{
+														message.channel.send(`bạn đã thắng ${sotien*2} coin 🪙`)
+													}
+												}) 	
 											  }else{
-												message.channel.send("bạn đã thua 100")
+												var query3 ="update public.user set money= money -"+ sotien +"where id='"+message.author.id+"'";
+												myconect.query(query3,(err2,result3) =>{
+													if(err2)
+													{
+														console.log(err2)
+														message.channel.send("error pls contact to admin");
+													}      
+													else{
+														message.channel.send(`bạn đã thua ${sotien} coin 🪙`)
+														
+													}
+												}) 	
+												
 											  }
 										  }else{
 											if(message.content.toLowerCase().startsWith(`;xiu`)){
-												message.channel.send("bạn đã thắng 200")
+												var query3 ="update public.user set money= money+"+ sotien*2 +"where id='"+message.author.id+"'";
+												myconect.query(query3,(err2,result3) =>{
+													if(err2)
+													{
+														console.log(err2)
+														message.channel.send("error pls contact to admin");
+													}      
+													else{
+														message.channel.send(`bạn đã thắng ${sotien*2} coin 🪙`)
+													}
+												}) 
+												
 											  }else{
-												message.channel.send("bạn đã thua 100")
+												var query3 ="update public.user set money= money -"+ sotien +"where id='"+message.author.id+"'";
+												myconect.query(query3,(err2,result3) =>{
+													if(err2)
+													{
+														console.log(err2)
+														message.channel.send("error pls contact to admin");
+													}      
+													else{
+														message.channel.send(`bạn đã thua ${sotien} coin 🪙`)
+														
+													}
+												}) 	
+												
 											  }
 											
 										  }
