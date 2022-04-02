@@ -350,8 +350,9 @@ bot.on('messageCreate', (message) => {
 											setTimeout(() => msg.delete(), 1000)
 										  }).catch()
 									}
-										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name)
-										  if(randomitem[0].value+randomitem[1].value+randomitem[2].value>=11){
+											let sum =randomitem[0].value+randomitem[1].value+randomitem[2].value
+										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +"("+sum>=11?"tài":"xỉu"+")")
+										  if(sum>=11){
 											  if(message.content.toLowerCase().startsWith(`;tai`)){
 												
 												var query3 ="update public.user set money= money+"+ sotien*2 +"where id='"+message.author.id+"'";
