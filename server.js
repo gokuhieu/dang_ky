@@ -332,7 +332,7 @@ bot.on('messageCreate', (message) => {
 							if(message.author.id==result.rows[i].id){
 								if(result.rows[i].money>=sotien){
 										message.channel.send("đã đăng kí ").then(msg => {
-											message.delete()
+											
 											setTimeout(() => msg.delete(), 5000)
 										  }).catch()
 									break;
