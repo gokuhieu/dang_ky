@@ -327,11 +327,12 @@ bot.on('messageCreate', (message) => {
 						message.channel.send("error pls contact to admin");
 					}      
 					else{
-						let messages;
+						let messages="";
 						let randomitem=[]
 						for(let i=0;i<result.rowCount;i++){
 							if(message.author.id==result.rows[i].id){
 								if(result.rows[i].money>=sotien){
+									messages=""
 									var item = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 									var item1 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 									var item2 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
@@ -417,8 +418,13 @@ bot.on('messageCreate', (message) => {
 								messages="vui lòng đăng kí account"
 							}
 						}
+						if(messages!=""){
+							message.channel.send(messages)
+						}
+						
 						
 					}	
+					
 				}) 
 				// message.channel.send("đã đặt cược "+sotien)
 			}else{
