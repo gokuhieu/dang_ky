@@ -20,6 +20,7 @@ const village=require('./village.json')
 const spawm = require('./spawm.json')
 const connection = require('pg').Pool;
 const fetch = require('node-fetch');
+const { json } = require("express");
 const simsimi = require('simsimi')({
 	key: 'Hw5nUcqXcCl4t-cD24OVih9Fq.Pt7KsUPD1e4hpa',
   });
@@ -330,11 +331,9 @@ bot.on('messageCreate', (message) => {
 						for(let i=0;i<result.rowCount;i++){
 							if(message.author.id==result.rows[i].id){
 								if(result.rows[i].money>=sotien){
-									for(let i=0;i<=4000;i=i+1000){
-										message.channel.send("đã đăng kí "+i).then(msg=>msg.delete({timeout:"1000"}))
+									for(let j=0;j<=4000;j=j+1000){
+										message.channel.send("đã đăng kí "+j).then(msg=>msg.delete({timeout:"1000"}))
 									}
-									
-									
 								}else{
 									messages="bạn không đủ tiền"
 								}
