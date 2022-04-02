@@ -335,6 +335,7 @@ bot.on('messageCreate', (message) => {
 											message.delete()
 											setTimeout(() => msg.delete(), 5000)
 										  }).catch()
+									break;
 								}else{
 									messages="bạn không đủ tiền"
 								}
