@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 var url = require('url');
-const xucxac={rows:[{id:"khoidau",name:"🎲"},{id:"mot",name:"1️⃣",value:1},{id:"hai",name:"2️⃣",value:2},{id:"ba",name:"3️⃣",value:3},{id:"bon",name:"4️⃣",value:4},{id:"nam",name:"5️⃣",value:5},{id:"sau",name:"6️⃣",value:6}]}
+const xucxac={rows:[{id:"mot",name:"1️⃣",value:1},{id:"hai",name:"2️⃣",value:2},{id:"ba",name:"3️⃣",value:3},{id:"bon",name:"4️⃣",value:4},{id:"nam",name:"5️⃣",value:5},{id:"sau",name:"6️⃣",value:6}]}
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
@@ -328,13 +328,23 @@ bot.on('messageCreate', (message) => {
 					}      
 					else{
 						let messages;
+						let randomitem=[]
 						for(let i=0;i<result.rowCount;i++){
 							if(message.author.id==result.rows[i].id){
-								if(result.rows[i].money>=sotien){
-									for(let j =0;j<=4000;j=j+1000){
-										message.channel.send("đã đăng kí "+j).then(msg => {
+								if(result.rows[i].money>=sotien){🎲
+									var item = xucxac[Math.floor(Math.random()*xucxac.length)];
+									var item1 = xucxac[Math.floor(Math.random()*xucxac.length)];
+									var item2 = xucxac[Math.floor(Math.random()*xucxac.length)];
+									randomitem.push(item)
+									randomitem.push(item1)
+									randomitem.push(item2)
+									for(let j =0;j<=10000;j=j+1000){
+										var item = xucxac[Math.floor(Math.random()*xucxac.length)];
+										var item1 = xucxac[Math.floor(Math.random()*xucxac.length)];
+										var item2 = xucxac[Math.floor(Math.random()*xucxac.length)];
+										message.channel.send("đang xúc xắc"+item.name+" "+item1.name+" "+item2.name).then(msg => {
 											
-											setTimeout(() => msg.delete(), 1000)
+											setTimeout(() => msg.delete(), 2000)
 										  }).catch()
 									}
 										  message.channel.send("bạn đã thắng 200")
