@@ -334,7 +334,7 @@ bot.on('messageCreate', (message) => {
 										message.channel.send("đã đăng kí ").then(msg => {
 											message.delete()
 											setTimeout(() => msg.delete(), 5000)
-										  })
+										  }).catch()
 								}else{
 									messages="bạn không đủ tiền"
 								}
