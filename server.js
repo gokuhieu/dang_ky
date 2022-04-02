@@ -351,7 +351,7 @@ bot.on('messageCreate', (message) => {
 										  }).catch()
 									}
 											let sum =randomitem[0].value+randomitem[1].value+randomitem[2].value
-										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +"("+(sum>=11?"tài":"xỉu")+")")
+										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum>=11?" tài ":" xỉu ")+")")
 										  if(sum>=11){
 											  if(message.content.toLowerCase().startsWith(`;tai`)){
 												
