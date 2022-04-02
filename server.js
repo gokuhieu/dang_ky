@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 var url = require('url');
-
+const xucxac={rows:[{id:"khoidau",name:"🎲"},{id:"mot",name:"1️⃣",value:1},{id:"hai",name:"2️⃣",value:2},{id:"ba",name:"3️⃣",value:3},{id:"bon",name:"4️⃣",value:4},{id:"nam",name:"5️⃣",value:5},{id:"sau",name:"6️⃣",value:6}]}
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
@@ -192,7 +192,7 @@ bot.on('messageCreate', (message) => {
 					des=des-60;
 				}else{			
 				}
-				ss=ss+`item :${spawm.rows[i].name},Location = ${spawm.rows[i].location}, Time spawm = ${spawm.rows[i].time.hour+":"+spawm.rows[i].time.minute}, Time to despawm = ${des==0?hournow+":00"+"00":hournow+":"+des}, tỷ lệ: ${spawm.rows[i].tyle} \n`;
+				ss=ss+`item :${spawm.rows[i].name},Location = ${spawm.rows[i].location}, Time spawm = ${spawm.rows[i].time.hour+":"+spawm.rows[i].time.minute}, Time to despawm = ${des==0?hournow+":00":hournow+":"+des}, tỷ lệ: ${spawm.rows[i].tyle} \n`;
 			}else{
 			}
 		}
@@ -314,7 +314,15 @@ bot.on('messageCreate', (message) => {
 					message.channel.send(s);
 				}	
 			}) 
-		}		
+		}else if(message.content.toLowerCase().startsWith(`doiitem`)){
+			const word = message.content.toLowerCase().split('')
+			var sotien=parseInt(word[1])
+			if(Number(sotien)){
+				
+			}else{
+				message.channel.send("hãy nhập số tiền")
+			}
+		}	
 		for(let i=0;i<village.rows.length;i++){
 		if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
 			for(let j=0;j<village.rows[i].code.length;j++){
