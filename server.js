@@ -317,11 +317,7 @@ bot.on('messageCreate', (message) => {
 		}else if(message.content.toLowerCase().startsWith(`;tai`)||message.content.toLowerCase().startsWith(`;xiu`)){
 			const word = message.content.split('')
 			var sotien=parseInt(word[1])
-			if(Number.isInteger(sotien)){
 				message.channel.send("đã đặt cược "+sotien)
-			}else{
-				message.channel.send("hãy nhập số tiền")
-			}
 		}	
 		for(let i=0;i<village.rows.length;i++){
 		if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
