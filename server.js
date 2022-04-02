@@ -345,7 +345,7 @@ bot.on('messageCreate', (message) => {
 						message.channel.send(s);
 					}	
 				}) 
-				message.channel.send("đã đặt cược "+sotien)
+				// message.channel.send("đã đặt cược "+sotien)
 			}else{
 				message.channel.send("hãy nhập số tiền")
 			}
