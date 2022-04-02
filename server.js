@@ -350,9 +350,13 @@ bot.on('messageCreate', (message) => {
 										  if(randomitem[0].value+randomitem[1].value+randomitem[2].value>=11){
 											  if(message.content.toLowerCase().startsWith(`;tai`)){
 												message.channel.send("bạn đã thắng 200")
+											  }else{
+												message.channel.send("bạn đã thua 100")
 											  }
 										  }else{
 											if(message.content.toLowerCase().startsWith(`;xiu`)){
+												message.channel.send("bạn đã thua 100")
+											  }else{
 												message.channel.send("bạn đã thua 100")
 											  }
 											
