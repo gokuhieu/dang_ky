@@ -326,7 +326,7 @@ bot.on('messageCreate', (message) => {
 						message.channel.send("error pls contact to admin");
 					}      
 					else{
-						let message;
+						let messages;
 						for(let i=0;i<result.rowCount;i++){
 							if(message.author.id==result.rows[i].id){
 								if(result.rows[i].money>=sotien){
@@ -336,11 +336,11 @@ bot.on('messageCreate', (message) => {
 									
 									
 								}else{
-									message="bạn không đủ tiền"
+									messages="bạn không đủ tiền"
 								}
 								break;
 							}else{
-								message="vui lòng đăng kí account"
+								messages="vui lòng đăng kí account"
 							}
 						}
 						message.channel.send(s);
