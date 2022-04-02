@@ -347,7 +347,7 @@ bot.on('messageCreate', (message) => {
 										item1 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 										item2 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 										message.channel.send("đang xúc xắc"+item.name+" "+item1.name+" "+item2.name).then(msg => {
-											setTimeout(() => msg.delete(), 2000)
+											setTimeout(() => msg.delete(), 1000)
 										  }).catch()
 									}
 										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name)
