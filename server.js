@@ -317,7 +317,7 @@ bot.on('messageCreate', (message) => {
 		}else if(message.content.toLowerCase().startsWith(`;tai`)||message.content.toLowerCase().startsWith(`;xiu`)){
 			const word = message.content.toLowerCase().split('')
 			var sotien=parseInt(word[1])
-			if(Number(sotien)){
+			if(Number.isInteger(sotien)){
 				
 			}else{
 				message.channel.send("hãy nhập số tiền")
