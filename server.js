@@ -347,7 +347,14 @@ bot.on('messageCreate', (message) => {
 										  }).catch()
 									}
 										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name)
-										  message.channel.send("bạn đã thắng 200")
+										  if(randomitem[0].value+randomitem[1].value+randomitem[2].value>=11){
+											  if(message.content.toLowerCase().startsWith(`;tai`)){
+												message.channel.send("bạn đã thắng 200")
+											  }
+										  }else{
+											message.channel.send("bạn đã thua 100")
+										  }
+										  
 									break;
 								}else{
 									messages="bạn không đủ tiền"
