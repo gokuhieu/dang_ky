@@ -318,7 +318,7 @@ bot.on('messageCreate', (message) => {
 			const word = message.content.toLowerCase().split('')
 			var sotien=parseInt(word[1])
 			if(Number.isInteger(sotien)){
-				
+				message.channel.send("đã đặt cược "+sotien)
 			}else{
 				message.channel.send("hãy nhập số tiền")
 			}
