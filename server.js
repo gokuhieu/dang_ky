@@ -342,7 +342,7 @@ bot.on('messageCreate', (message) => {
 									randomitem.push(item)
 									randomitem.push(item1)
 									randomitem.push(item2)
-									for(let j =0;j<3000;j=j++){
+									for(let j =0;j<3000;j++){
 										item = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 										item1 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 										item2 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
