@@ -343,7 +343,7 @@ bot.on('messageCreate', (message) => {
 								messages="vui lòng đăng kí account"
 							}
 						}
-						message.channel.send(s);
+						
 					}	
 				}) 
 				// message.channel.send("đã đặt cược "+sotien)
