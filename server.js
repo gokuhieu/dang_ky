@@ -332,16 +332,16 @@ bot.on('messageCreate', (message) => {
 						for(let i=0;i<result.rowCount;i++){
 							if(message.author.id==result.rows[i].id){
 								if(result.rows[i].money>=sotien){
-									var item = xucxac[Math.floor(Math.random()*xucxac.length)];
-									var item1 = xucxac[Math.floor(Math.random()*xucxac.length)];
-									var item2 = xucxac[Math.floor(Math.random()*xucxac.length)];
+									var item = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
+									var item1 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
+									var item2 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 									randomitem.push(item)
 									randomitem.push(item1)
 									randomitem.push(item2)
 									for(let j =0;j<=10000;j=j+1000){
-										item = xucxac[Math.floor(Math.random()*xucxac.length)];
-										item1 = xucxac[Math.floor(Math.random()*xucxac.length)];
-										item2 = xucxac[Math.floor(Math.random()*xucxac.length)];
+										item = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
+										item1 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
+										item2 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 										message.channel.send("đang xúc xắc"+item.name+" "+item1.name+" "+item2.name).then(msg => {
 											
 											setTimeout(() => msg.delete(), 2000)
