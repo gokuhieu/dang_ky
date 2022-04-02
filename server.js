@@ -342,12 +342,12 @@ bot.on('messageCreate', (message) => {
 									randomitem.push(item)
 									randomitem.push(item1)
 									randomitem.push(item2)
-									for(let j =0;j<10000;j=j+2000){
+									for(let j =0;j<3000;j=j++){
 										item = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 										item1 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 										item2 = xucxac.rows[Math.floor(Math.random()*xucxac.rows.length)];
 										message.channel.send("đang xúc xắc"+item.name+" "+item1.name+" "+item2.name).then(msg => {
-											setTimeout(() => msg.delete(), 2000)
+											setTimeout(() => msg.delete(), 100)
 										  }).catch()
 									}
 										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name)
