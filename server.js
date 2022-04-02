@@ -318,6 +318,34 @@ bot.on('messageCreate', (message) => {
 			const word = message.content.split(' ')
 			var sotien=parseInt(word[1])
 			if(Number.isInteger(sotien)){
+				var query2 ="select * from public.user";
+				myconect.query(query2,(err,result) =>{
+					if(err)
+					{
+						console.log(err)
+						message.channel.send("error pls contact to admin");
+					}      
+					else{
+						let message;
+						for(let i=0;i<result.rowCount;i++){
+							if(message.author.id==result.rows[i].id){
+								if(result.rows[i].money>=sotien){
+									for(let i=0;i<=4000;i=i+1000){
+										message.channel.send("đã đăng kí "+i).then(msg=>msg.delete({timeout:"100"}))
+									}
+									
+									
+								}else{
+									message="bạn không đủ tiền"
+								}
+								break;
+							}else{
+								message="vui lòng đăng kí account"
+							}
+						}
+						message.channel.send(s);
+					}	
+				}) 
 				message.channel.send("đã đặt cược "+sotien)
 			}else{
 				message.channel.send("hãy nhập số tiền")
