@@ -332,7 +332,8 @@ bot.on('messageCreate', (message) => {
 							if(message.author.id==result.rows[i].id){
 								if(result.rows[i].money>=sotien){
 									for(let j=0;j<=4000;j=j+1000){
-										message.channel.send("đã đăng kí "+j).then(msg=>msg.delete(1000))
+										message.channel.send("đã đăng kí "+j)
+										message.delete(1000)
 									}
 								}else{
 									messages="bạn không đủ tiền"
