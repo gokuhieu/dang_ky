@@ -378,7 +378,7 @@ bot.on('messageCreate', (message) => {
 											  }
 										  }else{
 											if(message.content.toLowerCase().startsWith(`;xiu`)){
-												var query3 ="update public.user set money= money+"+ sotien*2 +"where id='"+message.author.id+"'";
+												var query3 ="update public.user set money= money+"+ sotien +"where id='"+message.author.id+"'";
 												myconect.query(query3,(err2,result3) =>{
 													if(err2)
 													{
