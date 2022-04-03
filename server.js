@@ -63,6 +63,18 @@ app.post('/dangky',(req, res) => {
 })
 
 app.get('/',(req,res)=>{
+	let date= new Date();
+	var query ="delete from public.diemdanhlog";
+		myconect.query(query,(err,result) =>{
+			if(err)
+			{
+				console.log(err)
+				return;
+			}      
+			else{
+			}
+				
+		}) 
     var query2 ="select * from public.User_info";
     myconect.query(query2,(err,result) =>{
         if(err)
@@ -96,18 +108,7 @@ app.get('/giaithuong',(req,res)=>{
 })
 
 app.get('/home',(req,res)=>{
-	let date= new Date();
-	var query ="delete from public.diemdanhlog";
-		myconect.query(query,(err,result) =>{
-			if(err)
-			{
-				console.log(err)
-				return;
-			}      
-			else{
-			}
-				
-		}) 
+
 	var query2 ="select * from public.User_info";
     myconect.query(query2,(err,result) =>{
         if(err)
