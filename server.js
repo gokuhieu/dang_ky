@@ -121,19 +121,7 @@ app.get('/home',(req,res)=>{
             
     }) 
 })
-    var query2 ="select * from public.User_info";
-    myconect.query(query2,(err,result) =>{
-        if(err)
-        {
-            console.log(err)
-            return;
-        }      
-        else{
-            res.render(path.join(__dirname,'./home.html'),{result: result})
-        }
-            
-    }) 
-})
+
 
 const bot = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
