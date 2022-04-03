@@ -172,7 +172,6 @@ xem danh sách đã đăng kí ao làng ;aolang
 đăng kí account chơi game ;dangky
 điểm danh 24h/1 lần ;diemdanh
 ;[lệnh-game] số tiền đặt cược
-
 lệnh-game gồm có chan, le, tai, xiu
 luật chơi tài xỉu ;taixiu luat
 hệ thông đổi coin ra voucher giảm giá sẽ đc update sau
@@ -375,7 +374,12 @@ bot.on('messageCreate', (message) => {
 										  }).catch()
 									}
 									let sum =randomitem[0].value+randomitem[1].value+randomitem[2].value
-									message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum>=11?" tài ":" xỉu ")+")")
+									if(message.content.toLowerCase().startsWith(`;tai`)||message.content.toLowerCase().startsWith(`;xiu`)){
+										message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum>=11?" tài ":" xỉu ")+")")
+									}else{
+										message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum%2==0?" chẵn ":" lẻ ")+")")
+									}
+									
 										if((message.content.toLowerCase().startsWith(`;tai`) && sum>=11)||(message.content.toLowerCase().startsWith(`;xiu`) && sum <11)||(message.content.toLowerCase().startsWith(`;le`) && sum %2!=0)||(message.content.toLowerCase().startsWith(`;chan`) && sum %2==0)){
 											var query3 ="update public.user set money= money+"+ sotien +"where id='"+message.author.id+"'";
 											myconect.query(query3,(err2,result3) =>{
