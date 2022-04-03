@@ -64,7 +64,8 @@ app.post('/dangky',(req, res) => {
 
 app.get('/',(req,res)=>{
 	let date= new Date();
-	var query ="delete from public.diemdanhlog";
+	if(date.getHours()==0&&date.getMinutes()==0){
+		var query ="delete from public.diemdanhlog";
 		myconect.query(query,(err,result) =>{
 			if(err)
 			{
@@ -75,6 +76,8 @@ app.get('/',(req,res)=>{
 			}
 				
 		}) 
+	}
+
     var query2 ="select * from public.User_info";
     myconect.query(query2,(err,result) =>{
         if(err)
@@ -332,7 +335,7 @@ bot.on('messageCreate', (message) => {
 		}
 		else if(message.content.toLowerCase()==(`;taixiu luat`)){
 			message.channel.send(`Với tài xỉu, bạn sử dụng 3 viên xúc xắc. Mỗi viên xúc xắc có 6 mặt và người chơi sẽ đặt cược kết quả sau khi nhà cái lắc xúc xắc. Nếu kết quả trên tổng 3 mặt của xúc xắc là 4 đến 10 thì đó gọi là Xỉu, còn nếu là 11 đến 17 thì đó là Tài`)
-		}else if(message.content.toLowerCase().startsWith(`;tai`)||message.content.toLowerCase().startsWith(`;xiu`)){
+		}else if(message.content.toLowerCase().startsWith(`;tai`)||message.content.toLowerCase().startsWith(`;xiu`)||message.content.toLowerCase().startsWith(`;le`)||message.content.toLowerCase().startsWith(`;chan`)){
 			const word = message.content.split(' ')
 			var sotien=parseInt(word[1])
 			if(Number.isInteger(sotien)){
@@ -366,9 +369,8 @@ bot.on('messageCreate', (message) => {
 									}
 									let sum =randomitem[0].value+randomitem[1].value+randomitem[2].value
 									message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum>=11?" tài ":" xỉu ")+")")
-									if(sum>=11){
-										if(message.content.toLowerCase().startsWith(`;tai`)){
-											var query3 ="update public.user set money= money+"+ sotien*2 +"where id='"+message.author.id+"'";
+										if((message.content.toLowerCase().startsWith(`;tai`) && sum>=11)||(message.content.toLowerCase().startsWith(`;xiu`) && sum <11)){
+											var query3 ="update public.user set money= money+"+ sotien +"where id='"+message.author.id+"'";
 											myconect.query(query3,(err2,result3) =>{
 												if(err2)
 												{
@@ -376,34 +378,9 @@ bot.on('messageCreate', (message) => {
 													message.channel.send("error pls contact to admin");
 												}      
 												else{
-														message.channel.send(`bạn đã thắng ${sotien*2} coin 🪙`)
-												}}) 	
-											  }else{
-											var query3 ="update public.user set money= money -"+ sotien +"where id='"+message.author.id+"'";
-											myconect.query(query3,(err2,result3) =>{
-												if(err2)
-												{
-													console.log(err2)
-													message.channel.send("error pls contact to admin");
-												}      
-												else{
-													message.channel.send(`bạn đã thua ${sotien} coin 🪙`)
-												}}) 	
-											  }
-										  }else{
-											if(message.content.toLowerCase().startsWith(`;xiu`)){
-												var query3 ="update public.user set money= money+"+ sotien +"where id='"+message.author.id+"'";
-												myconect.query(query3,(err2,result3) =>{
-													if(err2)
-													{
-														console.log(err2)
-														message.channel.send("error pls contact to admin");
-													}      
-													else{
-														message.channel.send(`bạn đã thắng ${sotien*2} coin 🪙`)
-													}
-												}) 
-												
+													message.channel.send(`bạn đã thắng ${sotien*2} coin 🪙`)
+												}
+											}) 
 											  }else{
 												var query3 ="update public.user set money= money -"+ sotien +"where id='"+message.author.id+"'";
 												myconect.query(query3,(err2,result3) =>{
@@ -420,7 +397,7 @@ bot.on('messageCreate', (message) => {
 												
 											  }
 											
-										  }
+										  
 										  
 									break;
 								}else{
