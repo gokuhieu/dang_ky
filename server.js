@@ -320,7 +320,7 @@ bot.on('messageCreate', (message) => {
 						message.channel.send("ko thấy id hoặc số tiền sai");
 					}      
 					else{
-						message.channel.send(`đã thêm coin 🪙 thành công`)
+						message.channel.send(`đã thêm ${sotien} coin🪙 thành công`)
 					}	
 				}) 
 
