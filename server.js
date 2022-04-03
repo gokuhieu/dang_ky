@@ -169,6 +169,13 @@ const help=`;[command]
 random private code cho 1 làng: ;[village], lấy danh sách toàn bộ ps code làng đó: ;[village] list
 thời gian của các item drop hiện tại ;spawm now
 xem danh sách đã đăng kí ao làng ;aolang
+đăng kí account chơi game ;dangki
+điểm danh 24h/1 lần ;diemdanh
+;[lệnh-game] số tiền đặt cược
+
+lệnh-game gồm có chan, le, tai, xiu
+luật chơi tài xỉu ;taixiu luat
+hệ thông đổi coin ra voucher giảm giá sẽ đc update sau
 `
 bot.on('messageCreate', (message) => {
 	var chatbox=message.guild.channels.cache.get("957142185168470017")
