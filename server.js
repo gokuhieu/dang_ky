@@ -169,7 +169,7 @@ const help=`;[command]
 random private code cho 1 làng: ;[village], lấy danh sách toàn bộ ps code làng đó: ;[village] list
 thời gian của các item drop hiện tại ;spawm now
 xem danh sách đã đăng kí ao làng ;aolang
-đăng kí account chơi game ;dangki
+đăng kí account chơi game ;dangky
 điểm danh 24h/1 lần ;diemdanh
 ;[lệnh-game] số tiền đặt cược
 
