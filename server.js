@@ -96,6 +96,32 @@ app.get('/giaithuong',(req,res)=>{
 })
 
 app.get('/home',(req,res)=>{
+	let date= new Date();
+	var query ="delete from public.diemdanhlog";{
+		myconect.query(query,(err,result) =>{
+			if(err)
+			{
+				console.log(err)
+				return;
+			}      
+			else{
+			}
+				
+		}) 
+	}
+	var query2 ="select * from public.User_info";
+    myconect.query(query2,(err,result) =>{
+        if(err)
+        {
+            console.log(err)
+            return;
+        }      
+        else{
+            res.render(path.join(__dirname,'./home.html'),{result: result})
+        }
+            
+    }) 
+})
     var query2 ="select * from public.User_info";
     myconect.query(query2,(err,result) =>{
         if(err)
@@ -350,36 +376,31 @@ bot.on('messageCreate', (message) => {
 											setTimeout(() => msg.delete(), 1000)
 										  }).catch()
 									}
-											let sum =randomitem[0].value+randomitem[1].value+randomitem[2].value
-										  message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum>=11?" tài ":" xỉu ")+")")
-										  if(sum>=11){
-											  if(message.content.toLowerCase().startsWith(`;tai`)){
-												
-												var query3 ="update public.user set money= money+"+ sotien*2 +"where id='"+message.author.id+"'";
-												myconect.query(query3,(err2,result3) =>{
-													if(err2)
-													{
-														console.log(err2)
-														message.channel.send("error pls contact to admin");
-													}      
-													else{
+									let sum =randomitem[0].value+randomitem[1].value+randomitem[2].value
+									message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum>=11?" tài ":" xỉu ")+")")
+									if(sum>=11){
+										if(message.content.toLowerCase().startsWith(`;tai`)){
+											var query3 ="update public.user set money= money+"+ sotien*2 +"where id='"+message.author.id+"'";
+											myconect.query(query3,(err2,result3) =>{
+												if(err2)
+												{
+													console.log(err2)
+													message.channel.send("error pls contact to admin");
+												}      
+												else{
 														message.channel.send(`bạn đã thắng ${sotien*2} coin 🪙`)
-													}
-												}) 	
+												}}) 	
 											  }else{
-												var query3 ="update public.user set money= money -"+ sotien +"where id='"+message.author.id+"'";
-												myconect.query(query3,(err2,result3) =>{
-													if(err2)
-													{
-														console.log(err2)
-														message.channel.send("error pls contact to admin");
-													}      
-													else{
-														message.channel.send(`bạn đã thua ${sotien} coin 🪙`)
-														
-													}
-												}) 	
-												
+											var query3 ="update public.user set money= money -"+ sotien +"where id='"+message.author.id+"'";
+											myconect.query(query3,(err2,result3) =>{
+												if(err2)
+												{
+													console.log(err2)
+													message.channel.send("error pls contact to admin");
+												}      
+												else{
+													message.channel.send(`bạn đã thua ${sotien} coin 🪙`)
+												}}) 	
 											  }
 										  }else{
 											if(message.content.toLowerCase().startsWith(`;xiu`)){
