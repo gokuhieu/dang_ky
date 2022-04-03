@@ -308,9 +308,9 @@ bot.on('messageCreate', (message) => {
 			})
 		}else if(message.content.toLowerCase().startsWith(`;coin`)){
 			var words =message.content.toLowerCase().split(" ")
-			if(words[1]==="" &&words[2]==="")
+			if(words[1]==="" &&words[2]===""&&message.member.roles.cache.some(role =>{role.id==="914502815060230204"}))
 			{
-				
+				message.channel.send("bạn là admin")
 			}else{
 				var query2 ="select * from public.user";
 				myconect.query(query2,(err,result) =>{
