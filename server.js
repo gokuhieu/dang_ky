@@ -369,7 +369,7 @@ bot.on('messageCreate', (message) => {
 									}
 									let sum =randomitem[0].value+randomitem[1].value+randomitem[2].value
 									message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum>=11?" tài ":" xỉu ")+")")
-										if((message.content.toLowerCase().startsWith(`;tai`) && sum>=11)||(message.content.toLowerCase().startsWith(`;xiu`) && sum <11)){
+										if((message.content.toLowerCase().startsWith(`;tai`) && sum>=11)||(message.content.toLowerCase().startsWith(`;xiu`) && sum <11)||(message.content.toLowerCase().startsWith(`;le`) && sum %2!=0)||(message.content.toLowerCase().startsWith(`;chan`) && sum %2==0)){
 											var query3 ="update public.user set money= money+"+ sotien +"where id='"+message.author.id+"'";
 											myconect.query(query3,(err2,result3) =>{
 												if(err2)
