@@ -64,7 +64,7 @@ app.post('/dangky',(req, res) => {
 
 app.get('/',(req,res)=>{
 	let date= new Date();
-	
+	if(date.getHours()==0&&date.getMinutes()==0){
 		var query ="delete from public.diemdanhlog";
 		myconect.query(query,(err,result) =>{
 			if(err)
@@ -76,7 +76,7 @@ app.get('/',(req,res)=>{
 			}
 				
 		}) 
-	
+	}
 
     var query2 ="select * from public.User_info";
     myconect.query(query2,(err,result) =>{
