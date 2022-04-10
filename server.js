@@ -451,29 +451,30 @@ bot.on('messageCreate', (message) => {
 				message.channel.send("hãy nhập số tiền")
 			}
 		}
-		for(let i=0;i<village.rows.length;i++){
-		if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
-			for(let j=0;j<village.rows[i].code.length;j++){
-				s=s+village.rows[i].code[j]+"\n"
-			}	
-			message.channel.send(s);
-		}
 		else if(message.content.toLowerCase() ===`;${village.rows[i].name}`){
-		var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
-		message.channel.send(item);
-		}
-		else if(message.content.toLowerCase().includes("https://discord.gg")){
-			total++;
-			
-			if(total==1){
-				message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
-					setTimeout(() => {message.delete()},1000)
-				  })
-				  .catch()	
+			var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
+			message.channel.send(item);
+			}
+			else if(message.content.toLowerCase().includes("https://discord.gg")){
+				total++;
+				
+				if(total==1){
+					message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
+						setTimeout(() => {message.delete()},1000)
+					  })
+					  .catch()	
+				}
+	
+				
 			}
 
-			
-		}
+		for(let i=0;i<village.rows.length;i++){
+			if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
+				for(let j=0;j<village.rows[i].code.length;j++){
+					s=s+village.rows[i].code[j]+"\n"
+				}	
+				message.channel.send(s);
+			}
 	}
 });
 bot.login(process.env.DISCORD_TOKEN);
