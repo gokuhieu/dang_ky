@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 const sessions = require('cookie-session');
 const port = process.env.PORT || 3000;
 var invoiceid=0;
+let total=1;
 const fileUpload = require('express-fileupload')
 app.engine('html', require('ejs').renderFile);
 app.use(express.urlencoded({ extended: true })); 
@@ -462,12 +463,15 @@ bot.on('messageCreate', (message) => {
 		message.channel.send(item);
 		}
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
-			message.reply("tin nhắn đã bị chặn do quảng cáo")
-			.then(msg => {
-			  
-			  setTimeout(() => {message.delete()},0)
-			})
-			.catch()	
+			total++;
+			
+			if(total==1){
+				message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
+					setTimeout(() => {message.delete()},1000)
+				  })
+				  .catch()	
+			}
+
 			
 		}
 	}
