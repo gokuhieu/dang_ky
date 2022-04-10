@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 var url = require('url');
@@ -133,6 +132,7 @@ const bot = new Client({
 bot.on('guildMemberAdd', (member) => {
     const channelId = '919600155764858890'; // The Channel ID you just copied
     const welcomeMessage = `Chào <@${member.id}>! Hãy chat tại kênh này!`;
+	member.roles.add("919595690588532737")
     member.guild.channels.fetch(channelId).then(channel => {
         channel.send(welcomeMessage)
     });
