@@ -465,6 +465,7 @@ bot.on('messageCreate', (message) => {
 			
 			message.delete(1000)
 			message.channel.send("tin nhắn đã bị chặn do quảng cáo ");
+			message.
 			
 		}
 	}
