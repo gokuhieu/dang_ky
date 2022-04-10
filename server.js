@@ -465,7 +465,7 @@ bot.on('messageCreate', (message) => {
 			message.reply("tin nhắn đã bị chặn do quảng cáo")
 			.then(msg => {
 			  
-			  setTimeout(() => {message.delete()}, 100)
+			  setTimeout(() => {message.delete()}, 1000)
 			})
 			.catch()	
 	
