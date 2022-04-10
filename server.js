@@ -462,8 +462,9 @@ bot.on('messageCreate', (message) => {
 		message.channel.send(item);
 		}
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
-			message.delete()
+			
 			message.channel.send("tin nhắn đã bị chặn do quảng cáo ")
+			message.delete()
 		}
 	}
 });
