@@ -451,10 +451,7 @@ bot.on('messageCreate', (message) => {
 				message.channel.send("hãy nhập số tiền")
 			}
 		}
-		else if(message.content.toLowerCase() ===`;${village.rows[i].name}`){
-			var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
-			message.channel.send(item);
-			}
+
 			else if(message.content.toLowerCase().includes("https://discord.gg")){
 				total++;
 				
@@ -474,6 +471,10 @@ bot.on('messageCreate', (message) => {
 					s=s+village.rows[i].code[j]+"\n"
 				}	
 				message.channel.send(s);
+			}
+			else if(message.content.toLowerCase() ===`;${village.rows[i].name}`){
+				var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
+				message.channel.send(item);
 			}
 	}
 });
