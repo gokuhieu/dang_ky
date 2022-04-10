@@ -132,7 +132,7 @@ const bot = new Client({
 bot.on('guildMemberAdd', (member) => {
     const channelId = '919600155764858890'; // The Channel ID you just copied
     const welcomeMessage = `Chào <@${member.id}>! Hãy chat tại kênh này!`;
-	var role= member.guild.roles.cache.find(role => role.id === "919595690588532737");
+	var role= member.guild.roles.cache.find(role => role.name === "✅Member✅");
 	member.roles.add(role)
     member.guild.channels.fetch(channelId).then(channel => {
         channel.send(welcomeMessage)
