@@ -463,7 +463,8 @@ bot.on('messageCreate', (message) => {
 		}
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
 			
-			message.channel.send("tin nhắn đã bị chặn do quảng cáo ").then(msg=>{message.delete()}).catch();
+			message.delete(1000)
+			message.channel.send("tin nhắn đã bị chặn do quảng cáo ");
 			
 		}
 	}
