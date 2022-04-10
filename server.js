@@ -462,7 +462,7 @@ bot.on('messageCreate', (message) => {
 		message.channel.send(item);
 		}
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
-			message.channel.send("tin nhắn đã bị chặn do quảng cáo")
+			message.reply("tin nhắn đã bị chặn do quảng cáo")
 			.then(msg => {
 			  
 			  setTimeout(() => {message.delete()}, 100)
