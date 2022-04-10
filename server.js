@@ -464,8 +464,8 @@ bot.on('messageCreate', (message) => {
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
 			message.reply("tin nhắn đã bị chặn do quảng cáo")
 			.then(msg => {
-			  message.delete()
-			  setTimeout(() => msg.delete(), 3000)
+			  
+			  setTimeout(() => {message.delete()}, 3000)
 			})
 			.catch()	
 	
