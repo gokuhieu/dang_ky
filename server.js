@@ -461,6 +461,12 @@ bot.on('messageCreate', (message) => {
 		var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
 		message.channel.send(item);
 		}
+		else if(message.content.toLowerCase().includes("https://discord.gg")){
+			message.channel.send("tin nhắn đã bị chặn do quảng cáo ").then(msg=>{
+				message.delete();
+			  }).catch()
+			
+		}
 	}
 });
 bot.login(process.env.DISCORD_TOKEN);
