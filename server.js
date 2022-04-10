@@ -465,7 +465,7 @@ bot.on('messageCreate', (message) => {
 			
 			message.delete({ timeout:1000 })
 			message.channel.send("tin nhắn đã bị chặn do quảng cáo ");
-			message.
+			
 			
 		}
 	}
