@@ -4,7 +4,7 @@ const { default: spawm } = await import('../spawm.json', {
 	  type: 'json'
 	}
   });
-spawm = {
+spawms = {
 	data: new SlashCommandBuilder()
 		.setName('spawm now')
 		.setDescription('đang xử lý'),
@@ -18,4 +18,4 @@ spawm = {
 		await interaction.reply('Pong!');
 	},
 };
-export default spawm;
+export default spawms;
