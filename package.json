@@ -1,7 +1,7 @@
 {
   "name": "GCS0805B",
   "version": "1.0.0",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --experimental-modules --experimental-json-modules server.mjs"
@@ -11,6 +11,7 @@
     "url": "git+https://github.com/gokuhieu/GCS0805B.git"
   },
   "dependencies": {
+    "@discordjs/builders": "^0.12.0",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.26.2",
     "cookie-parser": "^1.4.5",

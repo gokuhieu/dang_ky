@@ -19,8 +19,8 @@ app.engine('html', ejs.renderFile);
 app.use(express.urlencoded({ extended: true })); 
 app.use('/public',express.static((__dirname+ '/public')))
 app.use(fileUpload({useTempFiles: true}))
-import { Client, Intents } from'discord.js';
-
+import { Client, Intents,Collection } from'discord.js';
+import * as fs from 'fs'
 const { default: token } = await import('./Config.json', {
 	assert: {
 	  type: 'json'
@@ -31,11 +31,9 @@ const { default: token } = await import('./Config.json', {
 	  type: 'json'
 	}
   });
-  const { default: spawm } = await import('./spawm.json', {
-	assert: {
-	  type: 'json'
-	}
-  });
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+client.commands = new Collection();
 import Connection from'pg';
 var connection = Connection.Pool
 import fetch from 'node-fetch';
@@ -501,18 +499,7 @@ bot.on('messageCreate', (message) => {
 				
 			
 
-		for(let i=0;i<village.rows.length;i++){
-			if(message.content.toLowerCase().startsWith(`;${village.rows[i].name}`)&&message.content.toLowerCase().includes("list")){
-				for(let j=0;j<village.rows[i].code.length;j++){
-					s=s+village.rows[i].code[j]+"\n"
-				}	
-				message.channel.send(s);
-			}
-			else if(message.content.toLowerCase() ===`;${village.rows[i].name}`){
-				var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
-				message.channel.send(item);
-			}
-	}
+		
 });
 bot.login(process.env.DISCORD_TOKEN);
 app.listen(port, () => {
