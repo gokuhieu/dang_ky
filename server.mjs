@@ -32,7 +32,11 @@ const { default: token } = await import('./Config.json', {
 	}
   });
 
-
+  const { default: spawm } = await import('../spawm.json', {
+	assert: {
+	  type: 'json'
+	}
+  });
 import Connection from'pg';
 var connection = Connection.Pool
 import fetch from 'node-fetch';
@@ -520,7 +524,15 @@ bot.on('messageCreate', (message) => {
 			
 			
 		}
-	
+		for(let i=0;i<village.rows.length;i++){
+			if(message.content.toLowerCase().includes(`;${village.rows[i].name}`)){
+				var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
+				message.reply(item);
+			}else{
+				message.reply("không có thông tin làng")
+			}
+		
+}
 				
 			
 

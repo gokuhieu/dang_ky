@@ -1,9 +1,5 @@
 import { SlashCommandBuilder } from'@discordjs/builders';
-const { default: spawm } = await import('../spawm.json', {
-	assert: {
-	  type: 'json'
-	}
-  });
+
 const spawms = {
 	data: new SlashCommandBuilder()
 		.setName('spawm now')
