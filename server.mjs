@@ -32,7 +32,7 @@ const { default: token } = await import('./Config.json', {
 	}
   });
 
-  const { default: spawm } = await import('../spawm.json', {
+  const { default: spawm } = await import('./spawm.json', {
 	assert: {
 	  type: 'json'
 	}
