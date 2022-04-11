@@ -457,7 +457,7 @@ bot.on('messageCreate', (message) => {
 		}
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
 			var admin =message.member.roles.cache.find(role => role.id === '914502815060230204')
-			if(message.member.roles.has(admin)){
+			if(message.member.roles.cache.has(admin)){
 				message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
 					setTimeout(() => {message.delete()},1000)
 					})
