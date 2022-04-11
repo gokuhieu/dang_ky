@@ -469,8 +469,17 @@ bot.on('messageCreate', (message) => {
 			}
 
 		}else if(message.content.toLowerCase()==";tim pokemon"){
-			var pokemon= P.getPokemonFormByName(1)
-			message.channel.send("đã tìm thấy "+pokemon)
+			(async () => { // with Async/Await
+				try {
+					const poke = await P.getPokemonByName(1)
+					
+					message.channel.send("đã tìm thấy "+poke)
+				} catch (error) {
+					throw error
+				}
+			})()
+			
+			
 		}
 	
 				
