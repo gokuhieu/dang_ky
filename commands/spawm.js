@@ -4,7 +4,7 @@ const { default: spawm } = await import('../spawm.json', {
 	  type: 'json'
 	}
   });
-spawms = {
+const spawms = {
 	data: new SlashCommandBuilder()
 		.setName('spawm now')
 		.setDescription('đang xử lý'),
