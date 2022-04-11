@@ -1,4 +1,4 @@
-import express from("express");
+import express from"express";
 const app = express();
 var url = require('url');
 const xucxac={rows:[{id:"mot",name:"1️⃣",value:1},{id:"hai",name:"2️⃣",value:2},{id:"ba",name:"3️⃣",value:3},{id:"bon",name:"4️⃣",value:4},{id:"nam",name:"5️⃣",value:5},{id:"sau",name:"6️⃣",value:6}]}
