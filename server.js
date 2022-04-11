@@ -311,7 +311,7 @@ bot.on('messageCreate', (message) => {
 			if(words[1] && words[2])
 			{
 				var admin =message.member.roles.cache.find(role => role.id === '914502815060230204')
-				if(message.member.roles.has(admin)){
+				if(message.member.roles.cache.has(admin)){
 					var sotien = parseInt(words[2])
 					var query2 ="update public.user set money= money +"+ sotien +"where id='"+words[1]+"'";
 					
