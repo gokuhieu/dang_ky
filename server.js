@@ -308,21 +308,27 @@ bot.on('messageCreate', (message) => {
 			})
 		}else if(message.content.toLowerCase().startsWith(`;coin`)){
 			var words =message.content.toLowerCase().split(" ")
-			if(words[1] && words[2]&&message.member.roles.cache.some(role => role.id === '914502815060230204')
+			if(words[1] && words[2])
 			{
-				var sotien = parseInt(words[2])
-				var query2 ="update public.user set money= money +"+ sotien +"where id='"+words[1]+"'";
-				
-				myconect.query(query2,(err,result) =>{
-					if(err)
-					{
-						console.log(err)
-						message.channel.send("ko thấy id hoặc số tiền sai");
-					}      
-					else{
-						message.channel.send(`đã thêm ${sotien} coin🪙 thành công`)
-					}	
-				}) 
+				var admin =message.member.roles.cache.find(role => role.id === '914502815060230204')
+				if(message.member.roles.has(admin)){
+					var sotien = parseInt(words[2])
+					var query2 ="update public.user set money= money +"+ sotien +"where id='"+words[1]+"'";
+					
+					myconect.query(query2,(err,result) =>{
+						if(err)
+						{
+							console.log(err)
+							message.channel.send("ko thấy id hoặc số tiền sai");
+						}      
+						else{
+							message.channel.send(`đã thêm ${sotien} coin🪙 thành công`)
+						}	
+					}) 
+				}else{
+					message.channel.send(`không có quyền`)
+				}
+
 
 			}else{
 				
