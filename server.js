@@ -449,7 +449,7 @@ bot.on('messageCreate', (message) => {
 				message.channel.send("hãy nhập số tiền")
 			}
 		}
-		else if(message.content.toLowerCase().includes("https://discord.gg")&&message.member.roles.cache.find(role => role.id != '914502815060230204')){
+		else if(message.content.toLowerCase().includes("https://discord.gg")&&!(message.member.roles.cache.some(role => role.id === '914502815060230204'))){
 				message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
 					setTimeout(() => {message.delete()},1000)
 					})
