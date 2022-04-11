@@ -7,8 +7,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
 const sessions = require('cookie-session');
 const port = process.env.PORT || 3000;
-var invoiceid=0;
-let total=1;
 const fileUpload = require('express-fileupload')
 app.engine('html', require('ejs').renderFile);
 app.use(express.urlencoded({ extended: true })); 
@@ -451,7 +449,7 @@ bot.on('messageCreate', (message) => {
 				message.channel.send("hãy nhập số tiền")
 			}
 		}
-		else if(message.content.toLowerCase().includes("https://discord.gg")){
+		else if(message.content.toLowerCase().includes("https://discord.gg")&&message.author.id!="914502815060230204"){
 				message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
 					setTimeout(() => {message.delete()},1000)
 					})
