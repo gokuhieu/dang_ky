@@ -308,7 +308,7 @@ bot.on('messageCreate', (message) => {
 			})
 		}else if(message.content.toLowerCase().startsWith(`;coin`)){
 			var words =message.content.toLowerCase().split(" ")
-			if(words[1] && words[2]&&message.member.roles.cache.some(role =>role.id!="914502815060230204"))
+			if(words[1] && words[2]&&message.member.roles.cache.some(role =>role.id==="914502815060230204"))
 			{
 				var sotien = parseInt(words[2])
 				var query2 ="update public.user set money= money +"+ sotien +"where id='"+words[1]+"'";
@@ -449,7 +449,7 @@ bot.on('messageCreate', (message) => {
 				message.channel.send("hãy nhập số tiền")
 			}
 		}
-		else if(message.content.toLowerCase().includes("https://discord.gg")&&message.member.roles.cache.some(role => role.id != '914502815060230204')){
+		else if(message.content.toLowerCase().includes("https://discord.gg")&&message.member.roles.cache.find(role => role.id != '914502815060230204')){
 				message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
 					setTimeout(() => {message.delete()},1000)
 					})
