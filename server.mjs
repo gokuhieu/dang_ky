@@ -139,7 +139,7 @@ app.get('/home',(req,res)=>{
     }) 
 })
 
-bot.commands=new Collection()
+
 for (const file of commandFiles) {
 	var command =import(`./commands/${file}`)
 	// Set a new item in the Collection
@@ -149,6 +149,7 @@ for (const file of commandFiles) {
 const bot = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
 });
+bot.commands=new Collection()
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 Client.commands = new Collection();
 bot.on('guildMemberAdd', (member) => {
