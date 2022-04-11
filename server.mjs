@@ -11,6 +11,10 @@ import sessions from'cookie-session';
 const port = process.env.PORT || 3000;
 import fileUpload from'express-fileupload'
 import ejs from 'ejs'
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 app.engine('html', ejs.renderFile);
 app.use(express.urlencoded({ extended: true })); 
 app.use('/public',express.static((__dirname+ '/public')))
