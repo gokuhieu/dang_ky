@@ -32,8 +32,7 @@ const { default: token } = await import('./Config.json', {
 	}
   });
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-client.commands = new Collection();
+
 import Connection from'pg';
 var connection = Connection.Pool
 import fetch from 'node-fetch';
@@ -144,6 +143,8 @@ app.get('/home',(req,res)=>{
 const bot = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
 });
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+bot.commands = new Collection();
 bot.on('guildMemberAdd', (member) => {
     const channelId = '919600155764858890'; // The Channel ID you just copied
     const welcomeMessage = `Chào <@${member.id}>! Hãy chat tại kênh này!`;
@@ -192,6 +193,12 @@ lệnh-game gồm có chan, le, tai, xiu
 luật chơi tài xỉu ;taixiu luat
 hệ thông đổi coin ra voucher giảm giá sẽ đc update sau
 `
+for (const file of commandFiles) {
+	var command =import(`./commands/${file}`)
+	// Set a new item in the Collection
+	// With the key as the command name and the value as the exported module
+	client.commands.set(command.data.name, command);
+}
 bot.on('messageCreate', (message) => {
 	var chatbox=message.guild.channels.cache.get("957142185168470017")
 	if (message.author.bot) 
