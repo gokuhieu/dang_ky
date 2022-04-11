@@ -139,7 +139,7 @@ app.get('/home',(req,res)=>{
     }) 
 })
 
-
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
 	var command =import(`./commands/${file}`)
 	// Set a new item in the Collection
@@ -150,7 +150,7 @@ const bot = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
 });
 bot.commands=new Collection()
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
 Client.commands = new Collection();
 bot.on('guildMemberAdd', (member) => {
     const channelId = '919600155764858890'; // The Channel ID you just copied
