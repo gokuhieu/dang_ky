@@ -458,12 +458,12 @@ bot.on('messageCreate', (message) => {
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
 			
 			if(message.member.roles.cache.has('914502815060230204')){
+
+			}else{
 				message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
 					setTimeout(() => {message.delete()},1000)
 					})
 					.catch()	
-			}else{
-
 			}
 
 		}
