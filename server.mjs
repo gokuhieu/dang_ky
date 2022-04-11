@@ -142,6 +142,7 @@ const bot = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
 });
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+bot.commands=new Collection()
 for (const file of commandFiles) {
 	var command =import(`./commands/${file}`)
 	// Set a new item in the Collection
@@ -149,7 +150,7 @@ for (const file of commandFiles) {
 	bot.commands.set(command.data.name, command);
 }
 
-bot.commands=new Collection()
+
 
 Client.commands = new Collection();
 bot.on('guildMemberAdd', (member) => {
