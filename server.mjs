@@ -145,18 +145,18 @@ app.get('/home',(req,res)=>{
 const bot = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
 });
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-bot.commands=new Collection()
-for (const file of commandFiles) {
-	const command = import(`./commands/${file}`);
-	// Set a new item in the Collection
-	// With the key as the command name and the value as the exported module
-	bot.commands.set(command.then(data=>{data.name}), command);
-}
+// const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+// bot.commands=new Collection()
+// for (const file of commandFiles) {
+// 	const command = import(`./commands/${file}`);
+// 	// Set a new item in the Collection
+// 	// With the key as the command name and the value as the exported module
+// 	bot.commands.set(command.then(data=>{data.name}), command);
+// }
 
 
 
-Client.commands = new Collection();
+// Client.commands = new Collection();
 bot.on('guildMemberAdd', (member) => {
     const channelId = '919600155764858890'; // The Channel ID you just copied
     const welcomeMessage = `Chào <@${member.id}>! Hãy chat tại kênh này!`;
@@ -171,20 +171,20 @@ bot.on('ready', () => {
 	console.log('Ready!');
 });
 
-bot.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
+// bot.on('interactionCreate', async interaction => {
+// 	if (!interaction.isCommand()) return;
 
-	const command = bot.commands.get(interaction.commandName);
+// 	const command = bot.commands.get(interaction.commandName);
 
-	if (!command) return;
+// 	if (!command) return;
 
-	try {
-		await command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		await interaction.reply({ content: 'đây không phải lệnh', ephemeral: true });
-	}
-});
+// 	try {
+// 		await command.execute(interaction);
+// 	} catch (error) {
+// 		console.error(error);
+// 		await interaction.reply({ content: 'đây không phải lệnh', ephemeral: true });
+// 	}
+// });
 function formathour(hour,min){
 if(min>=60){
 	return hour+1
