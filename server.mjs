@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/public',express.static((__dirname+ '/public')))
 app.use(fileUpload({useTempFiles: true}))
 import { Client, Intents } from'discord.js';
-import { token } from'./Config.json';
+import  token  from'./Config.json';
 import village from'./village.json'
 import spawm  from'./spawm.json'
 import Connection from'pg';
