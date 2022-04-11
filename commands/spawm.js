@@ -5,7 +5,7 @@ const { default: spawm } = await import('../spawm.json', {
 	}
   });
 module.exports = {
-	data: new SlashCommandBuilder(";")
+	data: new SlashCommandBuilder()
 		.setName('spawm now')
 		.setDescription('đang xử lý'),
 	async execute(interaction) {
