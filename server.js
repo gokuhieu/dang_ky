@@ -310,8 +310,8 @@ bot.on('messageCreate', (message) => {
 			var words =message.content.toLowerCase().split(" ")
 			if(words[1] && words[2])
 			{
-				var admin =message.member.roles.cache.find(role => role.id === '914502815060230204')
-				if(message.member.roles.cache.has(admin)){
+				
+				if(message.member.roles.cache.has('914502815060230204')){
 					var sotien = parseInt(words[2])
 					var query2 ="update public.user set money= money +"+ sotien +"where id='"+words[1]+"'";
 					
@@ -456,8 +456,8 @@ bot.on('messageCreate', (message) => {
 			}
 		}
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
-			var admin =message.member.roles.cache.find(role => role.id === '914502815060230204')
-			if(message.member.roles.cache.has(admin)){
+			
+			if(message.member.roles.cache.has('914502815060230204')){
 
 			}else{
 				message.reply("tin nhắn đã bị chặn do quảng cáo").then(msg => {
