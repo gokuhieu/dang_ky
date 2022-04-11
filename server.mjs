@@ -514,7 +514,8 @@ bot.on('messageCreate', (message) => {
 		}else if(message.content.toLowerCase()==";tim pokemon"){
 			(async () => { // with Async/Await
 				try {
-					P.getPokemonByName(1).then(poke=>{message.channel.send( "đã tìm thấy "+poke.name)} )
+					var id = Math.floor(Math.random() * 1000);
+					P.getPokemonByName(id).then(poke=>message.channel.send( `${poke.name?"đã tìm thấy"+poke.name:"không tìm thấy"}`))
 					
 					
 				} catch (error) {
