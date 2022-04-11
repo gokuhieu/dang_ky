@@ -1,29 +1,28 @@
 import express from"express";
 const app = express();
-var url = require('url');
+import url  from'url'
 const xucxac={rows:[{id:"mot",name:"1️⃣",value:1},{id:"hai",name:"2️⃣",value:2},{id:"ba",name:"3️⃣",value:3},{id:"bon",name:"4️⃣",value:4},{id:"nam",name:"5️⃣",value:5},{id:"sau",name:"6️⃣",value:6}]}
-const path = require('path');
+import path  from'path';
 import pokedex from 'pokedex-promise-v2';
 const P = new pokedex
-const bodyParser = require('body-parser');
-const cookieParser = require("cookie-parser");
-const sessions = require('cookie-session');
+import bodyParser from'body-parser';
+import cookieParser from"cookie-parser";
+import sessions from'cookie-session';
 const port = process.env.PORT || 3000;
-const fileUpload = require('express-fileupload')
+import fileUpload from'express-fileupload'
 app.engine('html', require('ejs').renderFile);
 app.use(express.urlencoded({ extended: true })); 
 app.use('/public',express.static((__dirname+ '/public')))
 app.use(fileUpload({useTempFiles: true}))
-const { Client, Intents } = require('discord.js');
-const { token } = require('./Config.json');
-const village=require('./village.json')
-const spawm = require('./spawm.json')
-const connection = require('pg').Pool;
-const fetch = require('node-fetch');
-const { json } = require("express");
-const simsimi = require('simsimi')({
-	key: 'Hw5nUcqXcCl4t-cD24OVih9Fq.Pt7KsUPD1e4hpa',
-  });
+import { Client, Intents } from'discord.js';
+import { token } from'./Config.json';
+import village from'./village.json'
+import spawm  from'./spawm.json'
+import Connection from'pg';
+var connection = Connection.Pool
+import fetch from 'node-fetch';
+import { json } from"express";
+
 const myconect = new connection({
     user: 'pyosvocvftheey',
     host: 'ec2-54-235-98-1.compute-1.amazonaws.com',
