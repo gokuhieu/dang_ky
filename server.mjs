@@ -10,7 +10,8 @@ import cookieParser from"cookie-parser";
 import sessions from'cookie-session';
 const port = process.env.PORT || 3000;
 import fileUpload from'express-fileupload'
-app.engine('html', require('ejs').renderFile);
+import ejs from 'ejs'
+app.engine('html', ejs.renderFile);
 app.use(express.urlencoded({ extended: true })); 
 app.use('/public',express.static((__dirname+ '/public')))
 app.use(fileUpload({useTempFiles: true}))
