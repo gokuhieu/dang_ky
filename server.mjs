@@ -144,7 +144,7 @@ const bot = new Client({
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 bot.commands=new Collection()
 for (const file of commandFiles) {
-	let command =import(`./commands/${file}`)
+	const command = require(`./commands/${file}`);
 	// Set a new item in the Collection
 	// With the key as the command name and the value as the exported module
 	bot.commands.set(command.data.name, command);
