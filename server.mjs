@@ -138,7 +138,9 @@ app.get('/home',(req,res)=>{
             
     }) 
 })
-
+const bot = new Client({
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
+});
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
 	var command =import(`./commands/${file}`)
@@ -146,9 +148,7 @@ for (const file of commandFiles) {
 	// With the key as the command name and the value as the exported module
 	bot.commands.set(command.data.name, command);
 }
-const bot = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
-});
+
 bot.commands=new Collection()
 
 Client.commands = new Collection();
