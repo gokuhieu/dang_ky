@@ -21,14 +21,20 @@ const { default: token } = await import('./Config.json', {
 	  type: 'json'
 	}
   });
-  
-import village from'./village.json'
-import spawm  from'./spawm.json'
+  const { default: village } = await import('./village.json', {
+	assert: {
+	  type: 'json'
+	}
+  });
+  const { default: spawm } = await import('./spawm.json', {
+	assert: {
+	  type: 'json'
+	}
+  });
 import Connection from'pg';
 var connection = Connection.Pool
 import fetch from 'node-fetch';
 import { json } from"express";
-
 const myconect = new connection({
     user: 'pyosvocvftheey',
     host: 'ec2-54-235-98-1.compute-1.amazonaws.com',
