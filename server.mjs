@@ -139,12 +139,18 @@ app.get('/home',(req,res)=>{
     }) 
 })
 
-
+bot.commands=new Collection()
+for (const file of commandFiles) {
+	var command =import(`./commands/${file}`)
+	// Set a new item in the Collection
+	// With the key as the command name and the value as the exported module
+	bot.commands.set(command.data.name, command);
+}
 const bot = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]
 });
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-bot.commands = new Collection();
+Client.commands = new Collection();
 bot.on('guildMemberAdd', (member) => {
     const channelId = '919600155764858890'; // The Channel ID you just copied
     const welcomeMessage = `Chào <@${member.id}>! Hãy chat tại kênh này!`;
@@ -158,6 +164,7 @@ bot.on('guildMemberAdd', (member) => {
 bot.on('ready', () => {
 	console.log('Ready!');
 });
+
 bot.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
@@ -169,7 +176,7 @@ bot.on('interactionCreate', async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		await interaction.reply({ content: 'đây không phải lệnh', ephemeral: true });
 	}
 });
 function formathour(hour,min){
@@ -207,12 +214,7 @@ lệnh-game gồm có chan, le, tai, xiu
 luật chơi tài xỉu ;taixiu luat
 hệ thông đổi coin ra voucher giảm giá sẽ đc update sau
 `
-for (const file of commandFiles) {
-	var command =import(`./commands/${file}`)
-	// Set a new item in the Collection
-	// With the key as the command name and the value as the exported module
-	client.commands.set(command.data.name, command);
-}
+
 bot.on('messageCreate', (message) => {
 	var chatbox=message.guild.channels.cache.get("957142185168470017")
 	if (message.author.bot) 
