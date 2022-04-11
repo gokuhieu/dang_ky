@@ -1,11 +1,11 @@
 {
   "name": "GCS0805B",
   "version": "1.0.0",
-  "type":"module",
+  "type": "module",
   "exports": "./node_modules/pokedex-promise-v2/dist/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.cjs"
   },
   "repository": {
     "type": "git",
