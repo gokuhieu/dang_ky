@@ -521,9 +521,7 @@ bot.on('messageCreate', (message) => {
 				} catch (error) {
 					throw error
 				}
-			})()
-			
-			
+			})()	
 		}
 		for(let i=0;i<village.rows.length;i++){
 			if(message.content.toLowerCase()==(`;${village.rows[i].name}`)){
