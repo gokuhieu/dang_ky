@@ -1,3 +1,5 @@
+
+let ping
 export default ping ={
     category: 'Testing',
     description: 'đang xử lý',
