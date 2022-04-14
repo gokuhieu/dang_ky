@@ -21,6 +21,7 @@ app.use('/public',express.static((__dirname+ '/public')))
 app.use(fileUpload({useTempFiles: true}))
 import { Client, Intents,Collection } from'discord.js';
 import * as fs from 'fs'
+import WOKCommands from'wokcommands'
 const { default: token } = await import('./Config.json', {
 	assert: {
 	  type: 'json'
@@ -168,9 +169,13 @@ bot.on('guildMemberAdd', (member) => {
     });
 });
 
+
 bot.on('ready', () => {
-	console.log('Ready!');
-});
+	new WOKCommands(bot, {
+	  // The name of the local folder for your command files
+	  commandsDir: path.join(__dirname, 'commands'),
+	})
+  })
 
 // bot.on('interactionCreate', async interaction => {
 // 	if (!interaction.isCommand()) return;
