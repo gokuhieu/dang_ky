@@ -155,6 +155,13 @@ const bot = new Client({
 // 	bot.commands.set(command.then(data=>{data.name}), command);
 // }
 
+bot.on('ready', () => {
+	new WOKCommands(bot, {
+	  // The name of the local folder for your command files
+	  commandsDir: path.join(__dirname, 'commands'),
+	  testServers:"914020407961591858"
+	})
+})
 
 
 // Client.commands = new Collection();
@@ -170,13 +177,6 @@ bot.on('guildMemberAdd', (member) => {
 });
 
 
-bot.on('ready', () => {
-	new WOKCommands(bot, {
-	  // The name of the local folder for your command files
-	  commandsDir: path.join(__dirname, 'commands'),
-	  testServers:"914020407961591858"
-	})
-  })
 
 // bot.on('interactionCreate', async interaction => {
 // 	if (!interaction.isCommand()) return;
