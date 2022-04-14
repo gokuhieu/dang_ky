@@ -1,4 +1,4 @@
-export default module ={
+export default json ={
     category: 'Testing',
     description: 'đang xử lý',
     slash:"both",
