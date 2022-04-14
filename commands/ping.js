@@ -1,4 +1,4 @@
-module.exports ={
+export default module ={
     category: 'Testing',
     description: 'đang xử lý',
     slash:"both",
