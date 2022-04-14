@@ -1,4 +1,4 @@
-export default json ={
+export default ping ={
     category: 'Testing',
     description: 'đang xử lý',
     slash:"both",
