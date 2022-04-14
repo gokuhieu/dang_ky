@@ -23,7 +23,7 @@ module.exports ={
         // OR just a string as the content.
         // WOKCommands will handle the proper way to reply with it
         return {
-          content: reply
+          content: "pong"
         }
       },
 }
