@@ -2,7 +2,8 @@ import {ICommand} from 'wokcommands'
 module.exports ={
     category: 'test',
     description: 'đang xử lý',
-    slash:true,
+    slash:"both",
+    testOnly: true,
     callback : ({ })=>{
         return "pong"
     }
