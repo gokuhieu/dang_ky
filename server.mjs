@@ -247,18 +247,6 @@ bot.on('messageCreate', (message) => {
 				}	
 			}) 
 		}
-		else if(message.content.toLowerCase()==(`;taixiu luat`)){
-			message.channel.send(`Với tài xỉu, bạn sử dụng 3 viên xúc xắc. Mỗi viên xúc xắc có 6 mặt và người chơi sẽ đặt cược kết quả sau khi nhà cái lắc xúc xắc. Nếu kết quả trên tổng 3 mặt của xúc xắc là 4 đến 10 thì đó gọi là Xỉu, còn nếu là 11 đến 17 thì đó là Tài`)
-		}else if(message.content.toLowerCase().startsWith(`;tai`)||message.content.toLowerCase().startsWith(`;xiu`)||message.content.toLowerCase().startsWith(`;le`)||message.content.toLowerCase().startsWith(`;chan`)){
-			const word = message.content.split(' ')
-			var sotien=parseInt(word[1])
-			if(Number.isInteger(sotien)){
-
-				// message.channel.send("đã đặt cược "+sotien)
-			}else{
-				message.channel.send("hãy nhập số tiền")
-			}
-		}
 		else if(message.content.toLowerCase().includes("https://discord.gg")){
 			
 			if(message.member.roles.cache.has('914502815060230204')){
