@@ -15,7 +15,7 @@ export default v ={
     expectedArgs: '<tên làng>',
     minArgs: 1,
     maxArgs: 1,
-    syntaxError: 'Incorrect usage! Please use pokemon command',
+    syntaxError: 'Incorrect usage! Please use help command',
     callback: ({ channel,args,interaction  }) => {
     
         // message is provided only for a legacy command
