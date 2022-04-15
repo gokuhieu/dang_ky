@@ -33,11 +33,11 @@ const { default: token } = await import('./Config.json', {
 	}
   });
 
-  const { default: spawm } = await import('./spawm.json', {
-	assert: {
-	  type: 'json'
-	}
-  });
+//   const { default: spawm } = await import('./spawm.json', {
+// 	assert: {
+// 	  type: 'json'
+// 	}
+//   });
 import Connection from'pg';
 var connection = Connection.Pool
 import fetch from 'node-fetch';
@@ -274,27 +274,6 @@ bot.on('messageCreate', (message) => {
 		}
 		ss===""?ss="không có item drop":ss
 		message.channel.send(ss)
-	}else if(message.content.toLowerCase().startsWith(`;spawm`)&&message.content.toLowerCase().includes("now"))	{
-		const date = new Date();
-		let ss=""
-		var offset = -300; //Timezone offset for EST in minutes.
-		var estDate = new Date(date.getTime() + offset*60*1000);
-
-		var hours= estDate.getHours()>=12?estDate.getHours()-12:estDate.getHours()
-		for(let i=0;i<spawm.rows.length;i++){
-			
-			if(spawm.rows[i].time.hour===hours&&spawm.rows[i].time.minute<=estDate.getMinutes()&&estDate.getMinutes()<=spawm.rows[i].time.minute+25){
-				var des=spawm.rows[i].time.minute+25
-				let hournow= formathour(spawm.rows[i].time.hour,des)
-				if(des>=60){
-					des=des-60;
-				}else{
-					
-				}
-				ss=ss+`item :${spawm.rows[i].name},Location = ${spawm.rows[i].location}, Time spawm = ${spawm.rows[i].time.hour+":"+spawm.rows[i].time.minute}, Time to despawm = ${hournow+":"+des}, tỷ lệ: ${spawm.rows[i].tyle} \n`;
-			}else{}
-		}
-		ss===""?ss="không có item drop":ss
 	}else if(message.channelId=="957142185168470017"){
 			fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`,{mode: 'cors'})
 			.then(result=> result.json())
