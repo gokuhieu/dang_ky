@@ -5,7 +5,7 @@ import pokedex from 'pokedex-promise-v2';
 const P = new pokedex
 export default p ={
     category: 'Testing',
-    description: 'xem các item spawm hiện tại',
+    description: 'lệnh pokemon',
     slash:"both",
     testOnly: true,
     expectedArgs: '<command> ',
