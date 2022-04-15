@@ -198,18 +198,7 @@ bot.on('guildMemberAdd', (guildMember) => {
 
 let s="";
 
-const help=`;[command] 
-----list command---
-random private code cho 1 làng: ;[village], lấy danh sách toàn bộ ps code làng đó: ;[village] list
-thời gian của các item drop hiện tại ;spawm now
-xem danh sách đã đăng kí ao làng ;aolang
-đăng kí account chơi game ;dangky
-điểm danh 24h/1 lần ;diemdanh
-;[lệnh-game] số tiền đặt cược
-lệnh-game gồm có chan, le, tai, xiu
-luật chơi tài xỉu ;taixiu luat
-hệ thông đổi coin ra voucher giảm giá sẽ đc update sau
-`
+
 
 bot.on('messageCreate', (message) => {
 	var chatbox=message.guild.channels.cache.get("957142185168470017")
@@ -228,26 +217,7 @@ bot.on('messageCreate', (message) => {
 			})	
 			// const response = await simsimi(message.content.toLowerCase())
 			// chatbox.send(`Bun đẹp trai : ${response}`)
-	}else if(message.content.toLowerCase()===(`;diemdanh`)){
-		
-		}else if(message.content.toLowerCase()===(`;doiitem`)){
-			var query2 ="select * from public.voucher";
-			let s=""
-			myconect.query(query2,(err,result) =>{
-				if(err)
-				{
-					console.log(err)
-					message.channel.send("error pls contact to admin");
-				}      
-				else{
-					for(let i=0;i<result.rowCount;i++){
-						s=s+`id: ${result.rows[i].voucherid}, ${result.rows[i].name}`
-					}
-					message.channel.send(s);
-				}	
-			}) 
-		}
-		else if(message.content.toLowerCase().includes("https://discord.gg")){
+	}else if(message.content.toLowerCase().includes("https://discord.gg")){
 			
 			if(message.member.roles.cache.has('914502815060230204')){
 
@@ -257,8 +227,24 @@ bot.on('messageCreate', (message) => {
 					})
 					.catch()	
 			}
-
 		}
+	// }else if(message.content.toLowerCase()===(`;doiitem`)){
+	// 	var query2 ="select * from public.voucher";
+	// 	let s=""
+	// 	myconect.query(query2,(err,result) =>{
+	// 		if(err)
+	// 		{
+	// 			console.log(err)
+	// 			message.channel.send("error pls contact to admin");
+	// 		}      
+	// 		else{
+	// 			for(let i=0;i<result.rowCount;i++){
+	// 				s=s+`id: ${result.rows[i].voucherid}, ${result.rows[i].name}`
+	// 			}
+	// 			message.channel.send(s);
+	// 		}	
+	// 	}) 
+	// }
 
 				
 			

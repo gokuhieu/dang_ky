@@ -12,7 +12,7 @@ const myconect = new connection({
 let c 
 export default c={
     category: 'Testing',
-    description: 'đăng kí account game',
+    description: 'điểm danh mỗi ngày',
     slash:"both",
     testOnly: true,
     syntaxError: 'Incorrect usage! Please use help command',

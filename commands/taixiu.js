@@ -13,7 +13,7 @@ const myconect = new connection({
 let c 
 export default c={
     category: 'Testing',
-    description: 'thêm coin',
+    description: 'tài xĩu chẵn lẻ vui chơi có thưởng',
     slash:"both",
     testOnly: true,
     expectedArgs: '<ID người chơi> <số tiền>',

@@ -9,7 +9,7 @@ const { default: village } = await import('../village.json', {
   });
 export default v ={
     category: 'Testing',
-    description: 'nhập tên làng',
+    description: 'xem random code của làng',
     slash:"both",
     testOnly: true,
     expectedArgs: '<tên làng>',
