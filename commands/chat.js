@@ -38,7 +38,7 @@ export default v ={
           axios.request(options).then(function (response) {
               channel.send(response.data.chatbot.response);
           }).catch(function (error) {
-              console.error(error);
+              channel.send(error);
           });
       },
 }
