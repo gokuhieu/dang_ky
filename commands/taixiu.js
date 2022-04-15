@@ -27,7 +27,7 @@ export default c={
                     case "luat":
                         message.channel.send(`Với tài xỉu, bạn sử dụng 3 viên xúc xắc. Mỗi viên xúc xắc có 6 mặt và người chơi sẽ đặt cược kết quả sau khi nhà cái lắc xúc xắc. Nếu kết quả trên tổng 3 mặt của xúc xắc là 4 đến 10 thì đó gọi là Xỉu, còn nếu là 11 đến 17 thì đó là Tài`)
                         break;
-                    case "tai" || "xiu":
+                    case "tai" || "xiu"||"chan"||"le":
                             if(args[1]){
                                 const sotien = parseInt(args[1])
                                 if(Number.isInteger(sotien)){
