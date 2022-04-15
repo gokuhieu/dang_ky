@@ -24,7 +24,8 @@ export default v ={
             for(let i=0;i<village.rows.length;i++){
                 if(option==(`${village.rows[i].name}`)){
                     var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
-                    return({content: item});
+                    channel.send({content: item});
+                    check = true
                     
                 }else{
                     
@@ -32,7 +33,7 @@ export default v ={
 
             }
             if(!check){
-                return ({
+                channel.send ({
                     content : "không có thông tin làng"
                 })
             }
