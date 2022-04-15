@@ -176,7 +176,9 @@ bot.on('guildMemberAdd', (member) => {
         channel.send(welcomeMessage)
     });
 });
-
+bot.on('guildMemberAdd', (guildMember) => {
+	guildMember.roles.add("919595690588532737");
+});
 
 
 // bot.on('interactionCreate', async interaction => {
