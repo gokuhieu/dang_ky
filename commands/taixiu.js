@@ -116,19 +116,6 @@ export default c={
             }
         // message is provided only for a legacy command
 		
-			var sotien = parseInt(args[1])
-			var query2 ="update public.user set money= money +"+ sotien +"where id='"+args[0]+"'";
-			
-			myconect.query(query2,(err,result) =>{
-				if(err)
-				{
-					console.log(err)
-					channel.send("ko thấy id hoặc số tiền sai");
-				}      
-				else{
-					channel.send(`đã thêm ${sotien} coin🪙 thành công`)
-				}	
-			}) 
 
       },
 }
