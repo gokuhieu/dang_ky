@@ -17,6 +17,7 @@ export default p ={
         // message is provided only for a legacy command
         
             const option = args[0]
+            console.log(option)
             if(option ==="tim")
             (async () => { // with Async/Await
 				try {
