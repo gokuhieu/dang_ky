@@ -218,22 +218,7 @@ bot.on('messageCreate', (message) => {
 	}
     else if(message.content.toLowerCase() ===';help')
 	message.channel.send(help);
-	else if(message.content.toLowerCase() ===";aolang"){
-		var query2 ="select * from public.User_info";
-		myconect.query(query2,(err,result) =>{
-			if(err)
-			{
-				message.channel.send("error pls contact to admin");
-			}      
-			else{
-				var s=``
-				for(var i= 0;i<result.rowCount;i++){
-					s=s+result.rows[i].Roblox_ID + " - "+result.rows[i].DisName+"\n";	
-				}
-				message.channel.send(s);
-			}	
-		}) 
-	}else if(message.channelId=="957142185168470017"){
+	else if(message.channelId=="957142185168470017"){
 			fetch(`https://api-sv2.simsimi.net/v2/?text=${message.content.toLowerCase()}&lc=vn&cf=false`,{mode: 'cors'})
 			.then(result=> result.json())
 			.then(data=>{
