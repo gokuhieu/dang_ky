@@ -8,7 +8,7 @@ export default p ={
     description: 'lệnh pokemon',
     slash:"both",
     testOnly: true,
-    expectedArgs: '<command> ',
+    expectedArgs: '<command>',
     minArgs: 1,
     maxArgs: 1,
     syntaxError: 'Incorrect usage! Please use pokemon command',
