@@ -228,18 +228,6 @@ bot.on('messageCreate', (message) => {
 			})	
 			// const response = await simsimi(message.content.toLowerCase())
 			// chatbox.send(`Bun đẹp trai : ${response}`)
-	}else if(message.content.toLowerCase()===(`;dangky`)){
-		var query2 ="insert into public.User (ID,Name,Money) values('"+message.author.id+"'"+",'"+message.author.username+"'"+","+0+")";
-		myconect.query(query2,(err,result) =>{
-			if(err)
-			{
-				console.log(err)
-				message.channel.send("error pls contact to admin");
-			}      
-			else{
-				message.channel.send("đăng kí thành công");
-			}
-		}) 
 	}else if(message.content.toLowerCase()===(`;diemdanh`)){
 		var check=false;
 		var query2 ="select * from public.user";
