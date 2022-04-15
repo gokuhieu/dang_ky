@@ -21,7 +21,7 @@ export default v ={
         // message is provided only for a legacy command
         
         const encodedParams = new URLSearchParams();
-        encodedParams.append("q", x);
+        encodedParams.append("q", s);
         encodedParams.append("target", "vi");
         encodedParams.append("source", "en");
 
