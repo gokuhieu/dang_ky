@@ -15,8 +15,8 @@ export default v ={
         
         const encodedParams = new URLSearchParams();
         encodedParams.append("q", args[0]);
-        encodedParams.append("target", "vn");
-        encodedParams.append("source", "en");
+        encodedParams.append("target", "en");
+        encodedParams.append("source", "vn");
 
         const options = {
         method: 'POST',
