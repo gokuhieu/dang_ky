@@ -192,13 +192,7 @@ bot.on('guildMemberAdd', (member) => {
 // 		await interaction.reply({ content: 'đây không phải lệnh', ephemeral: true });
 // 	}
 // });
-function formathour(hour,min){
-if(min>=60){
-	return hour+1
-}else{
-	return hour
-}
-}
+
 let s="";
 const banggia=`Tyn tailed gen 1 - 40k, gen 2 - 40k;
 1 rank - 5k 

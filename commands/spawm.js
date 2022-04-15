@@ -1,4 +1,11 @@
 
+  function formathour(hour,min){
+    if(min>=60){
+        return hour+1
+    }else{
+        return hour
+    }
+    }
   const { default: spawm } = await import('../spawm.json', {
 	assert: {
 	  type: 'json'
