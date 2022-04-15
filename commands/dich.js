@@ -13,7 +13,7 @@ export default v ={
         let s =""
         for(let i=0;i<=99;i++){
             if(args[i]){
-                s=s+args[i]
+                s=s+args[i]+" "
             }else{
                 break;
             }
