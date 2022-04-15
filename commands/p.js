@@ -4,7 +4,7 @@ let p
 import pokedex from 'pokedex-promise-v2';
 const P = new pokedex
 export default p ={
-    category: 'Math',
+    category: 'Testing',
     description: 'lệnh pokemon',
     slash:"both",
     testOnly: true,
