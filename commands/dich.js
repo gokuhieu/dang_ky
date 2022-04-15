@@ -31,9 +31,9 @@ export default v ={
         };
 
         axios.request(options).then(function (response) {
-            channel.send(response.data);
+            console.log(response.data);
         }).catch(function (error) {
-            channel.send(error);
+            console.log(error);
         });
       },
 }
