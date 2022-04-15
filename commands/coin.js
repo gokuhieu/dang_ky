@@ -25,13 +25,12 @@ export default c={
             if(err)
             {
                 console.log(err)
-                message.channel.send("error pls contact to admin");
+                channel.send("error pls contact to admin");
             }      
             else{
                 for(let i=0;i<result.rowCount;i++){
-                    if(result.rows[i].id==message.author.id){
-                        message.channel.send(`Người chơi: ${result.rows[i].name}, coin: ${result.rows[i].money} 🪙`);
-                    }
+                        channel.send(`Người chơi: ${result.rows[i].name}, coin: ${result.rows[i].money} 🪙`);
+                    
                 }
             }	
         }) 
