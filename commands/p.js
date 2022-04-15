@@ -37,7 +37,7 @@ export default p ={
         // Alternatively we can just simply return our reply object
         // OR just a string as the content.
         // WOKCommands will handle the proper way to reply with it
-            return "sai command"
+            
         
       },
 }
