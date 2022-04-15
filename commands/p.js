@@ -12,10 +12,10 @@ export default p ={
     minArgs: 1,
     maxArgs: 1,
     syntaxError: 'Incorrect usage! Please use pokemon command',
-    callback: ({ message, interaction,args  }) => {
+    callback: ({ channel,args  }) => {
     
         // message is provided only for a legacy command
-        if (message) {
+        
             const option = args[0]
             if(option ==="tim")
             (async () => { // with Async/Await
@@ -23,31 +23,23 @@ export default p ={
 					var id = Math.floor(Math.random() * 1000);
 					const pname= P.getPokemonByName(id).then(poke=>message.channel.send( `${poke.name?"đã tìm thấy "+poke.name + " ":"không tìm thấy"}`))
 					const pimage=P.getPokemonFormByName(id).then(poke=>message.channel.send( `${poke.sprites.front_default?poke.sprites.front_default:null}`))
-                    message.reply({
-                        content: pname
+                    channel.reply({
+                        content: [pname,pimage]
                       })
-                    message.reply({
-                        content: pimage
-                    })
 				} catch (error) {
 					throw error
 				}
 			})()	
 
-          return
-        }
+          
+        
         
         // interaction is provided only for a slash command
-        interaction.reply({
-            
-          content: ss
-        })
         
         // Alternatively we can just simply return our reply object
         // OR just a string as the content.
         // WOKCommands will handle the proper way to reply with it
-        return {
-          content: "pong"
-        }
+        return { content:[pname,pimage]}
+        
       },
 }
