@@ -281,50 +281,6 @@ bot.on('messageCreate', (message) => {
 					}
 				}
 			})
-		}else if(message.content.toLowerCase().startsWith(`;coin`)){
-			var words =message.content.toLowerCase().split(" ")
-			if(words[1] && words[2])
-			{
-				
-				if(message.member.roles.cache.has('914502815060230204')){
-					var sotien = parseInt(words[2])
-					var query2 ="update public.user set money= money +"+ sotien +"where id='"+words[1]+"'";
-					
-					myconect.query(query2,(err,result) =>{
-						if(err)
-						{
-							console.log(err)
-							message.channel.send("ko thấy id hoặc số tiền sai");
-						}      
-						else{
-							message.channel.send(`đã thêm ${sotien} coin🪙 thành công`)
-						}	
-					}) 
-				}else{
-					message.channel.send(`không có quyền`)
-				}
-
-
-			}else{
-				
-				var query2 ="select * from public.user";
-				myconect.query(query2,(err,result) =>{
-					if(err)
-					{
-						console.log(err)
-						message.channel.send("error pls contact to admin");
-					}      
-					else{
-						for(let i=0;i<result.rowCount;i++){
-							if(result.rows[i].id==message.author.id){
-								message.channel.send(`Người chơi: ${result.rows[i].name}, coin: ${result.rows[i].money} 🪙`);
-							}
-						}
-					}	
-				}) 
-				
-			}
-			
 		}else if(message.content.toLowerCase()===(`;doiitem`)){
 			var query2 ="select * from public.voucher";
 			let s=""
