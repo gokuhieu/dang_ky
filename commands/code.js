@@ -25,16 +25,10 @@ export default v ={
                 if(option==(`${village.rows[i].name}`)){
                     var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
                     channel.send({content:item});
-                    
+                    break;
                 }else{
                     
+            } 
             }
-            
-            }
-           
-
-          
-        
-    
       },
 }
