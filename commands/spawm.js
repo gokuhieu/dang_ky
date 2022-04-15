@@ -66,7 +66,6 @@ export default spawms ={
             ss===""?ss="không có item drop":ss
         // interaction is provided only for a slash command
         interaction.reply({
-            
           content: ss
         })
         
