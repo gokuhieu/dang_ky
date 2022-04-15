@@ -20,7 +20,7 @@ export default c={
     maxArgs: 2,
     syntaxError: 'Incorrect usage! Please use help command',
     permissions: ['ADMINISTRATOR'],
-    callback: ({ channel,args,interaction  }) => {
+    callback: ({ channel,args  }) => {
     
         // message is provided only for a legacy command
 		
