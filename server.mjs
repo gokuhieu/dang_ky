@@ -195,21 +195,7 @@ bot.on('guildMemberAdd', (member) => {
 // });
 
 let s="";
-const banggia=`Tyn tailed gen 1 - 40k, gen 2 - 40k;
-1 rank - 5k 
-20k - 6 rank
-max rank - 50k
-max lv vĩ thú - 20k 
-combo event boss
-SHINDAI  - 40K
-FORGED  - 40K
-DEVA       - 20k
-ĐẶC BIỆT: khi các bạn mua combo 3 event boss và 1 thập vĩ nx thì giá chỉ có 120k th ạ:3 
-autoroll bloodline - (thương lượng theo rate)
-lmited bloodline - đóng 
-max ryo - 40K
-1m ryo - 1k
-săn tailed beast - 10k gen 2, 20k gen 1 `;
+
 const help=`;[command] 
 ----list command---
 random private code cho 1 làng: ;[village], lấy danh sách toàn bộ ps code làng đó: ;[village] list
@@ -229,8 +215,7 @@ bot.on('messageCreate', (message) => {
 		return;
     if(message.content.toLowerCase().includes('bun') || message.content.toLowerCase().includes('đẹp trai'||message.content.toLowerCase().includes("dep trai")) ){
         message.channel.send('bunpro đẹp trai nhất nhóm!');
-	}else if(message.content.toLowerCase() ===';banggia')
-	message.channel.send(banggia);
+	}
     else if(message.content.toLowerCase() ===';help')
 	message.channel.send(help);
 	else if(message.content.toLowerCase() ===";aolang"){
