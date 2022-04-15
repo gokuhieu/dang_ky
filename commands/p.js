@@ -1,0 +1,53 @@
+
+import DiscordJS from 'discord.js'
+let p
+import pokedex from 'pokedex-promise-v2';
+const P = new pokedex
+export default p ={
+    category: 'Testing',
+    description: 'xem các item spawm hiện tại',
+    slash:"both",
+    testOnly: true,
+    expectedArgs: '<command> ',
+    minArgs: 1,
+    maxArgs: 1,
+    syntaxError: 'Incorrect usage! Please use pokemon command',
+    callback: ({ message, interaction,args  }) => {
+    
+        // message is provided only for a legacy command
+        if (message) {
+            const option = args[0]
+            if(option ==="tim")
+            (async () => { // with Async/Await
+				try {
+					var id = Math.floor(Math.random() * 1000);
+					const pname= P.getPokemonByName(id).then(poke=>message.channel.send( `${poke.name?"đã tìm thấy "+poke.name + " ":"không tìm thấy"}`))
+					const pimage=P.getPokemonFormByName(id).then(poke=>message.channel.send( `${poke.sprites.front_default?poke.sprites.front_default:null}`))
+                    message.reply({
+                        content: pname
+                      })
+                    message.reply({
+                        content: pimage
+                    })
+				} catch (error) {
+					throw error
+				}
+			})()	
+
+          return
+        }
+        
+        // interaction is provided only for a slash command
+        interaction.reply({
+            
+          content: ss
+        })
+        
+        // Alternatively we can just simply return our reply object
+        // OR just a string as the content.
+        // WOKCommands will handle the proper way to reply with it
+        return {
+          content: "pong"
+        }
+      },
+}

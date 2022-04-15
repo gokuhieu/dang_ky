@@ -160,7 +160,8 @@ bot.on('ready', () => {
 	  // The name of the local folder for your command files
 	  commandsDir: path.join(__dirname, 'commands'),
 	  testServers:"914020407961591858"
-	})
+	  
+	}).setDefaultPrefix(';')
 })
 
 
@@ -488,7 +489,7 @@ bot.on('messageCreate', (message) => {
 				message.reply(item);
 			}else{
 				
-			}
+		}
 		
 }
 				
