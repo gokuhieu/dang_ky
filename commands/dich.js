@@ -31,6 +31,7 @@ export default v ={
         };
 
         axios.request(options).then(function (response) {
+            console.log(response.data.data)
             channel.send(response.data.data.translations[0].translatedText);
         }).catch(function (error) {
             channel.send(error);
