@@ -16,7 +16,7 @@ export default c={
     slash:"both",
     testOnly: true,
     syntaxError: 'Incorrect usage! Please use help command',
-    callback: ({ channel,interaction  }) => {
+    callback: ({ message,interaction  }) => {
     
         // message is provided only for a legacy command
 		
@@ -25,12 +25,13 @@ export default c={
             if(err)
             {
                 console.log(err)
-                channel.send("error pls contact to admin");
+                message.channel.send("error pls contact to admin");
             }      
             else{
                 for(let i=0;i<result.rowCount;i++){
-                        channel.send(`Người chơi: ${result.rows[i].name}, coin: ${result.rows[i].money} 🪙`);
-                    
+                    if(result.rows[i].id==message.author.id){
+                        message.channel.send(`Người chơi: ${result.rows[i].name}, coin: ${result.rows[i].money} 🪙`);
+                    }
                 }
             }	
         }) 
