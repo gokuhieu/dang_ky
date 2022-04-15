@@ -10,7 +10,8 @@ lệnh-game gồm có chan, le, tai, xiu
 luật chơi tài xỉu ;taixiu luat
 hệ thông đổi coin ra voucher giảm giá sẽ đc update sau
 `
-export default spawms ={
+let helps
+export default helps ={
     category: 'Testing',
     description: 'Bun đẹp trai ơi hãy giúp tôi',
     slash:"both",
