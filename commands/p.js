@@ -4,7 +4,7 @@ let p
 import pokedex from 'pokedex-promise-v2';
 const P = new pokedex
 export default p ={
-    category: 'Testing',
+    category: 'Math',
     description: 'lệnh pokemon',
     slash:"both",
     testOnly: true,
@@ -23,7 +23,7 @@ export default p ={
 					var id = Math.floor(Math.random() * 1000);
 					const pname= P.getPokemonByName(id).then(poke=>message.channel.send( `${poke.name?"đã tìm thấy "+poke.name + " ":"không tìm thấy"}`))
 					const pimage=P.getPokemonFormByName(id).then(poke=>message.channel.send( `${poke.sprites.front_default?poke.sprites.front_default:null}`))
-                    channel.reply({
+                    channel.send({
                         content: [pname,pimage]
                       })
 				} catch (error) {
@@ -39,7 +39,7 @@ export default p ={
         // Alternatively we can just simply return our reply object
         // OR just a string as the content.
         // WOKCommands will handle the proper way to reply with it
-        return { content:[pname,pimage]}
+        return "command sai"
         
       },
 }
