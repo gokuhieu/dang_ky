@@ -16,7 +16,7 @@ export default v ={
     minArgs: 1,
     maxArgs: 1,
     syntaxError: 'Incorrect usage! Please use pokemon command',
-    callback: ({ channel,args  }) => {
+    callback: ({ channel,args,interaction  }) => {
     
         // message is provided only for a legacy command
         
@@ -24,7 +24,7 @@ export default v ={
             for(let i=0;i<village.rows.length;i++){
                 if(option==(`${village.rows[i].name}`)){
                     var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
-                    channel.send(item);
+                    interaction.reply(item);
                 }else{
                     
             }
