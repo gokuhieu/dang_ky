@@ -1,4 +1,4 @@
-
+import axios from 'axios'
 let v
 export default v ={
     category: 'Testing',
@@ -12,7 +12,7 @@ export default v ={
     callback: ({ channel,args,interaction  }) => {
     
         // message is provided only for a legacy command
-        const axios = import("axios");
+        
         const encodedParams = new URLSearchParams();
         encodedParams.append("q", args[0]);
         encodedParams.append("target", "vn");
