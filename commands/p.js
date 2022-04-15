@@ -22,11 +22,8 @@ export default p ={
             (async () => { // with Async/Await
 				try {
 					var id = Math.floor(Math.random() * 1000);
-					const pname= P.getPokemonByName(id).then(poke=>message.channel.send( `${poke.name?"đã tìm thấy "+poke.name + " ":"không tìm thấy"}`))
-					const pimage=P.getPokemonFormByName(id).then(poke=>message.channel.send( `${poke.sprites.front_default?poke.sprites.front_default:null}`))
-                    return {
-                        content: [pname,pimage]
-                      }
+					const pname= P.getPokemonByName(id).then(poke=>channel.send( `${poke.name?"đã tìm thấy "+poke.name + " ":"không tìm thấy"}`))
+					const pimage=P.getPokemonFormByName(id).then(poke=>channel.send( `${poke.sprites.front_default?poke.sprites.front_default:null}`))
 				} catch (error) {
 					throw error
 				}
