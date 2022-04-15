@@ -31,7 +31,7 @@ export default v ={
         };
 
         axios.request(options).then(function (response) {
-            console.log(response.data);
+            console.log(response.data.translations);
         }).catch(function (error) {
             console.log(error);
         });
