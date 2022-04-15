@@ -60,7 +60,7 @@ export default c={
                                                               }).catch()
                                                         }
                                                         let sum =randomitem[0].value+randomitem[1].value+randomitem[2].value
-                                                        if(args[0]`tai`||args[0]`xiu`){
+                                                        if(args[0]==`tai`||args[0]==`xiu`){
                                                             message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum>=11?" tài ":" xỉu ")+")")
                                                         }else{
                                                             message.channel.send("xúc xắc xong: "+randomitem[0].name+" "+randomitem[1].name+" "+randomitem[2].name+" tổng điểm là : "+sum +" ("+(sum%2==0?" chẵn ":" lẻ ")+")")
