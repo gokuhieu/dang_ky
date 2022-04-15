@@ -18,15 +18,15 @@ export default p ={
         
             const option = args[0]
             console.log(option)
-            if(option ==="tim")
+            if(option === "tim")
             (async () => { // with Async/Await
 				try {
 					var id = Math.floor(Math.random() * 1000);
 					const pname= P.getPokemonByName(id).then(poke=>message.channel.send( `${poke.name?"đã tìm thấy "+poke.name + " ":"không tìm thấy"}`))
 					const pimage=P.getPokemonFormByName(id).then(poke=>message.channel.send( `${poke.sprites.front_default?poke.sprites.front_default:null}`))
-                    channel.send({
+                    return {
                         content: [pname,pimage]
-                      })
+                      }
 				} catch (error) {
 					throw error
 				}
@@ -40,7 +40,7 @@ export default p ={
         // Alternatively we can just simply return our reply object
         // OR just a string as the content.
         // WOKCommands will handle the proper way to reply with it
-        return "command sai"
+            return "sai command"
         
       },
 }
