@@ -19,16 +19,22 @@ export default v ={
     callback: ({ channel,args,interaction  }) => {
     
         // message is provided only for a legacy command
-        
+            var check =false
             const option = args[0]
             for(let i=0;i<village.rows.length;i++){
                 if(option==(`${village.rows[i].name}`)){
                     var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
-                    channel.send({content:item});
-                    break;
+                    return({content:item});
+                    
                 }else{
                     
             } 
+
+            }
+            if(!check){
+                return ({
+                    content : "không có thông tin làng"
+                })
             }
       },
 }
