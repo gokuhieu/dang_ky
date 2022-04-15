@@ -7,7 +7,7 @@
 let spawms
 export default spawms ={
     category: 'Testing',
-    description: '',
+    description: 'xem các item spawm hiện tại',
     slash:"both",
     testOnly: true,
     callback: ({ message, interaction }) => {
