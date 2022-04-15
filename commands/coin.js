@@ -16,7 +16,7 @@ export default c={
     slash:"both",
     testOnly: true,
     syntaxError: 'Incorrect usage! Please use help command',
-    callback: ({ channel,args,interaction  }) => {
+    callback: ({ channel,interaction  }) => {
     
         // message is provided only for a legacy command
 		
