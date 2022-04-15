@@ -483,15 +483,7 @@ bot.on('messageCreate', (message) => {
 				}
 			})()	
 		}
-		for(let i=0;i<village.rows.length;i++){
-			if(message.content.toLowerCase()==(`;${village.rows[i].name}`)){
-				var item = village.rows[i].code[Math.floor(Math.random()*village.rows[i].code.length)]
-				message.reply(item);
-			}else{
-				
-		}
-		
-}
+
 				
 			
 
